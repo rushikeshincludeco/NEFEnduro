@@ -1,0 +1,29 @@
+PODS:
+  - GoogleMaps (2.1.1):
+    - GoogleMaps/Maps (= 2.1.1)
+  - GoogleMaps/Base (2.1.1)
+  - GoogleMaps/Maps (2.1.1):
+    - GoogleMaps/Base
+  - GooglePlaces (2.1.1):
+    - GoogleMaps/Base (= 2.1.1)
+  - iCarousel (1.8.3)
+  - SnapKit (3.1.2)
+  - XCDYouTubeKit (2.5.3)
+
+DEPENDENCIES:
+  - GoogleMaps
+  - GooglePlaces
+  - iCarousel (~> 1.8)
+  - SnapKit (~> 3.1.2)
+  - XCDYouTubeKit (~> 2.5)
+
+SPEC CHECKSUMS:
+  GoogleMaps: a5b5bbe47734e2443bde781a6aa64e69fdb6d785
+  GooglePlaces: 35636d86e5020cba3856eb988c09a5491de0a65a
+  iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
+  SnapKit: 12b24f569cb7c143acc9c22b9d91b23e7b1c84a2
+  XCDYouTubeKit: 90690f9e3523735dc93b8024269d991b0cfffe78
+
+PODFILE CHECKSUM: 38c8c5ffd9859ec0dbe5d713ac23fdddfb53d563
+
+COCOAPODS: 1.1.1
