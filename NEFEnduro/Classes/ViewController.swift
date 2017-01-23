@@ -31,6 +31,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         let bgImageView = UIImageView(image: UIImage(named: "bgImage"))
         bgImageView.contentMode = .scaleAspectFill
         
+        self.navigationController?.delegate = self
+        
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         let collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
         view.addSubview(collectionView)
@@ -243,6 +245,4 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             return value
         }
     }
-
 }
-
