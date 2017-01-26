@@ -11,9 +11,13 @@ import UIKit
 import SnapKit
 import iCarousel
 import XCDYouTubeKit
+import TransitionTreasury
+import TransitionAnimation
 
-class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UIViewControllerTransitioningDelegate, UINavigationControllerDelegate, iCarouselDelegate, iCarouselDataSource {
-
+class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, NavgationTransitionable, iCarouselDelegate, iCarouselDataSource {
+    
+    var tr_pushTransition: TRNavgationTransitionDelegate?
+    
     let nefImageView = UIImageView()
 
     //Datasource
@@ -21,19 +25,22 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     let filterDict = ["duo","team","solo"]
     let imgDict = ["duoImage","teamImage","soloImage"]
     var type:String? = nil
-    var animationController = AnimationController()
+    let videoPlayerViewController = XCDYouTubeVideoPlayerViewController()
     
     var headerHeight: CGFloat = 100
+    var footerHeight: CGFloat = 100
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        headerHeight = view.frame.height * 0.35
+        footerHeight = view.frame.height * 0.40
 
         let bgImageView = UIImageView(image: UIImage(named: "bgImage"))
         bgImageView.contentMode = .scaleAspectFill
         
-        self.navigationController?.delegate = self
-        
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        
         let collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
         view.addSubview(collectionView)
         collectionView.delegate = self
@@ -44,13 +51,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         collectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: "Footer")
         
         collectionView.backgroundView = bgImageView
-        
-        layout.sectionInset = UIEdgeInsets(top: 20, left: 0, bottom: 10, right: 0)
-        layout.itemSize = CGSize(width: self.view.frame.width/3, height: self.view.frame.width/3)
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
-        collectionView.collectionViewLayout = layout
-        
+        collectionView.isScrollEnabled = false
         collectionView.snp.makeConstraints { (make) in
             make.left.right.top.bottom.equalTo(view)
         }
@@ -59,39 +62,13 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        videoPlayerViewController.moviePlayer.play()
         self.navigationController?.isNavigationBarHidden = true
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-
-    //Navigation Delegates
-    
-    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        
-        if let CategoryTableViewController = segue.destination as? CategoryTableViewController {
-            
-            animationController = CubeAnimationController()
-            self.navigationController?.delegate = self;
-            
-            CategoryTableViewController.type = self.type!
-            CategoryTableViewController.transitioningDelegate = self;
-        }
-    }
-    
-    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        
-        let cubeAnimationController = CubeAnimationController()
-        
-        if operation == UINavigationControllerOperation.push  {
-            cubeAnimationController.isPresenting = true
-        } else {
-            cubeAnimationController.isPresenting = false
-        }
-        return cubeAnimationController;
-        
     }
     
     // MARK:- Collection View Data Source and Delegate
@@ -112,8 +89,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         cell.bottomImage.layer.shadowOpacity = 0.75
         cell.bottomImage.layer.masksToBounds = false;
         cell.bottomImage.clipsToBounds = false;
-        
-        cell.tintColor = UIColor.blue
         
         return cell
     }
@@ -145,13 +120,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             videoContainerView.backgroundColor = UIColor.green
             footerView.addSubview(videoContainerView)
             videoContainerView.snp.makeConstraints({ (make) in
-                make.left.right.bottom.top.equalTo(footerView)
+                make.left.right.top.equalTo(footerView)
+                make.bottom.equalTo(view)
             })
             
-            let videoPlayerViewController = XCDYouTubeVideoPlayerViewController(videoIdentifier: "0vd03koSsug")
+            videoPlayerViewController.videoIdentifier = "0vd03koSsug"
             videoPlayerViewController.present(in: videoContainerView)
             videoPlayerViewController.moviePlayer.play()
-            videoPlayerViewController.moviePlayer.scalingMode = .aspectFill
+            videoPlayerViewController.moviePlayer.scalingMode = .fill
             return footerView
             
         default:
@@ -159,28 +135,54 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as? CustomCollectionViewCell
+        cell?.contentView.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.5)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as? CustomCollectionViewCell
+        cell?.contentView.backgroundColor = UIColor.clear
+    }
+    
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         referenceSizeForHeaderInSection section: Int) -> CGSize {
-        headerHeight = view.frame.height * 0.30
         return CGSize(width: UIScreen.main.bounds.width, height: headerHeight)
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         referenceSizeForFooterInSection section: Int) -> CGSize {
-        
-        return CGSize(width: UIScreen.main.bounds.width, height: 291)
+        return CGSize(width: UIScreen.main.bounds.width, height: footerHeight)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 125, height: 125);
+        let remainingHeight = view.frame.height - (headerHeight + footerHeight)
+        return CGSize(width: self.view.frame.width/3, height: remainingHeight);
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        self.type = filterDict[indexPath.row]
+//        let model = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CategoryTableViewController") as! CategoryTableViewController
+//        model.modalDelegate = self
+//        tr_presentViewController(model, method: TRPresentTransitionMethod.twitter)
+        
+        if let cell = collectionView.cellForItem(at: indexPath) as? CustomCollectionViewCell {
+            
+            videoPlayerViewController.moviePlayer.stop()
+            
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CategoryTableViewController") as! CategoryTableViewController
+            let updateTransition: TRPushTransitionMethod = .omni(keyView: cell)
+            navigationController?.tr_pushViewController(vc, method:updateTransition, statusBarStyle: .lightContent, completion: {
+                print("Pushed")
+            })
+        }
+    }
     
-    private func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        self.type = filterDict[indexPath.row]
-        self.performSegue(withIdentifier: "toTableData", sender: self)
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        
+        return UIEdgeInsets.zero
     }
     
     // MARK:- iCarousel Data Source and Delegate

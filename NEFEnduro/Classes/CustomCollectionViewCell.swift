@@ -16,7 +16,7 @@ class CustomCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+                
         topLabel.font = UIFont(name: "ALoveofThunder", size: 30)
         topLabel.textAlignment = .center
         topLabel.textColor = UIColor.white
