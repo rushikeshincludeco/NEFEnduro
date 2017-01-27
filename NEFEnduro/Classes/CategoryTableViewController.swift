@@ -7,31 +7,41 @@
 //
 
 import UIKit
+import SnapKit
+import TransitionTreasury
+import TransitionAnimation
 
-class CategoryTableViewController: UIViewController {
+class CategoryTableViewController: UIViewController, NavgationTransitionable{
+    
+    /// Transiton delegate
+    var tr_pushTransition: TRNavgationTransitionDelegate?
 
     var type:String? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        navigationController?.isNavigationBarHidden = false
+        
+        view.backgroundColor = UIColor.red
+        
+        let button = UIButton()
+        view.addSubview(button)
+        button.setTitle("POP", for: .normal)
+        button.addTarget(self, action: #selector(self.popButtonTapped(button:)), for: .touchUpInside)
+        button.snp.makeConstraints { (make) in
+            make.center.equalTo(view)
+            make.height.width.equalTo(40)
+        }
     }
 
+    func popButtonTapped(button : UIButton) -> Void {
+        navigationController?.popViewController(animated: true)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

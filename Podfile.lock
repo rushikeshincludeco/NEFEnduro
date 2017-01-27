@@ -9,6 +9,9 @@ PODS:
     - GoogleMaps/Base (= 2.1.1)
   - iCarousel (1.8.3)
   - SnapKit (3.1.2)
+  - TransitionAnimation (4.0.0):
+    - TransitionTreasury (~> 4.0)
+  - TransitionTreasury (4.0.0)
   - XCDYouTubeKit (2.5.3)
 
 DEPENDENCIES:
@@ -17,6 +20,8 @@ DEPENDENCIES:
   - GooglePlaces
   - iCarousel (~> 1.8)
   - SnapKit (~> 3.1.2)
+  - TransitionAnimation (~> 4.0.0)
+  - TransitionTreasury (~> 4.0.0)
   - XCDYouTubeKit (~> 2.5)
 
 SPEC CHECKSUMS:
@@ -25,8 +30,14 @@ SPEC CHECKSUMS:
   GooglePlaces: 35636d86e5020cba3856eb988c09a5491de0a65a
   iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
   SnapKit: 12b24f569cb7c143acc9c22b9d91b23e7b1c84a2
+  TransitionAnimation: c397b9ca41ab593b35b1e8f8673df17bae0db20a
+  TransitionTreasury: dcf3fe6e5c740525d9e7d4544af45e6fbfd71c88
   XCDYouTubeKit: 90690f9e3523735dc93b8024269d991b0cfffe78
 
+<<<<<<< HEAD
 PODFILE CHECKSUM: dc33afd3b57dfa208fc2755514f7af0dba0827a7
+=======
+PODFILE CHECKSUM: 38a3fadf5f338d61ec8da4386c5615f582860585
+>>>>>>> origin/master
 
 COCOAPODS: 1.1.0.rc.2

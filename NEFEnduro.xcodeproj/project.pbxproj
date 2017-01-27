@@ -37,9 +37,8 @@
 		A26BE20A1E32334500501B0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A26BE2081E32334500501B0C /* LaunchScreen.storyboard */; };
 		A26BE2151E32372A00501B0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26BE2131E32372A00501B0C /* AppDelegate.swift */; };
 		A26BE2161E32372A00501B0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26BE2141E32372A00501B0C /* ViewController.swift */; };
-		A26BE21B1E323A5B00501B0C /* AnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26BE2191E323A5B00501B0C /* AnimationController.swift */; };
-		A26BE21C1E323A5B00501B0C /* CubeAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26BE21A1E323A5B00501B0C /* CubeAnimationController.swift */; };
 		A26BE21E1E32457600501B0C /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26BE21D1E32457600501B0C /* CustomCollectionViewCell.swift */; };
+		C467C4AEBD0A40D7B5CC75BA /* Pods_NEFEnduro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9090014F2B494A970CC71A1 /* Pods_NEFEnduro.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,9 +77,10 @@
 		A26BE2111E32366400501B0C /* NEF-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NEF-Bridging-Header.h"; sourceTree = "<group>"; };
 		A26BE2131E32372A00501B0C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A26BE2141E32372A00501B0C /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A26BE2191E323A5B00501B0C /* AnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationController.swift; sourceTree = "<group>"; };
-		A26BE21A1E323A5B00501B0C /* CubeAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CubeAnimationController.swift; sourceTree = "<group>"; };
 		A26BE21D1E32457600501B0C /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		D0631D8E68EA3DEB09BE1307 /* Pods-NEFEnduro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NEFEnduro.release.xcconfig"; path = "Pods/Target Support Files/Pods-NEFEnduro/Pods-NEFEnduro.release.xcconfig"; sourceTree = "<group>"; };
+		E4AE5456721894D5D119D8F8 /* Pods-NEFEnduro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NEFEnduro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NEFEnduro/Pods-NEFEnduro.debug.xcconfig"; sourceTree = "<group>"; };
+		E9090014F2B494A970CC71A1 /* Pods_NEFEnduro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NEFEnduro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,28 +88,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				15D3B84066599807A690667E /* Pods_NEFEnduro.framework in Frameworks */,
+				C467C4AEBD0A40D7B5CC75BA /* Pods_NEFEnduro.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7E4D17941F7FC70B4A23EC1D /* Frameworks */ = {
+		2CF5A533116A1A9F44490940 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				736E8D32D24AE9B739CB5984 /* Pods_NEFEnduro.framework */,
+				E9090014F2B494A970CC71A1 /* Pods_NEFEnduro.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		80CA42541095AB0C42905F4F /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				76676EC7812AD8BC57A2378C /* Pods-NEFEnduro.debug.xcconfig */,
-				448789B0C7C4C8EF6111C8E3 /* Pods-NEFEnduro.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		A20389DB1E327CC30007C9D2 /* Fonts */ = {
@@ -162,8 +153,8 @@
 			children = (
 				A26BE1FE1E32334500501B0C /* NEFEnduro */,
 				A26BE1FD1E32334500501B0C /* Products */,
-				80CA42541095AB0C42905F4F /* Pods */,
-				7E4D17941F7FC70B4A23EC1D /* Frameworks */,
+				FDC9B805924F70941126B2BA /* Pods */,
+				2CF5A533116A1A9F44490940 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -198,7 +189,6 @@
 				62103BBD1E3B12B7003C0196 /* path.gpx */,
 				A26BE21F1E32457A00501B0C /* CollectionVIew Cells */,
 				A20389DB1E327CC30007C9D2 /* Fonts */,
-				A26BE2181E323A3900501B0C /* Animation Controllers */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -211,21 +201,21 @@
 			name = Application;
 			sourceTree = "<group>";
 		};
-		A26BE2181E323A3900501B0C /* Animation Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				A26BE2191E323A5B00501B0C /* AnimationController.swift */,
-				A26BE21A1E323A5B00501B0C /* CubeAnimationController.swift */,
-			);
-			name = "Animation Controllers";
-			sourceTree = "<group>";
-		};
 		A26BE21F1E32457A00501B0C /* CollectionVIew Cells */ = {
 			isa = PBXGroup;
 			children = (
 				A26BE21D1E32457600501B0C /* CustomCollectionViewCell.swift */,
 			);
 			name = "CollectionVIew Cells";
+			sourceTree = "<group>";
+		};
+		FDC9B805924F70941126B2BA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E4AE5456721894D5D119D8F8 /* Pods-NEFEnduro.debug.xcconfig */,
+				D0631D8E68EA3DEB09BE1307 /* Pods-NEFEnduro.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,12 +225,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A26BE20E1E32334500501B0C /* Build configuration list for PBXNativeTarget "NEFEnduro" */;
 			buildPhases = (
-				61BB86E50F04EB8FD80AD4CF /* [CP] Check Pods Manifest.lock */,
+				B56BC2DFFFEB6A3BB2132628 /* [CP] Check Pods Manifest.lock */,
 				A26BE1F81E32334500501B0C /* Sources */,
 				A26BE1F91E32334500501B0C /* Frameworks */,
 				A26BE1FA1E32334500501B0C /* Resources */,
-				541277BDF94F2002FE3873F4 /* [CP] Embed Pods Frameworks */,
-				DCF3509C6056D0C9960E914C /* [CP] Copy Pods Resources */,
+				6210EFE85EB792759D85EC83 /* [CP] Embed Pods Frameworks */,
+				720BCBF576ACE31A87A509EB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -322,7 +312,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		541277BDF94F2002FE3873F4 /* [CP] Embed Pods Frameworks */ = {
+		6210EFE85EB792759D85EC83 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -337,22 +327,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NEFEnduro/Pods-NEFEnduro-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		61BB86E50F04EB8FD80AD4CF /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		DCF3509C6056D0C9960E914C /* [CP] Copy Pods Resources */ = {
+		720BCBF576ACE31A87A509EB /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -367,6 +342,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NEFEnduro/Pods-NEFEnduro-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B56BC2DFFFEB6A3BB2132628 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -374,11 +364,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A26BE21B1E323A5B00501B0C /* AnimationController.swift in Sources */,
 				A26BE21E1E32457600501B0C /* CustomCollectionViewCell.swift in Sources */,
 				A26BE2161E32372A00501B0C /* ViewController.swift in Sources */,
 				A26BE2151E32372A00501B0C /* AppDelegate.swift in Sources */,
-				A26BE21C1E323A5B00501B0C /* CubeAnimationController.swift in Sources */,
 				A2038A091E3291530007C9D2 /* CategoryTableViewController.swift in Sources */,
 				62103BBE1E3B12B7003C0196 /* MapViewController.swift in Sources */,
 			);
@@ -501,7 +489,7 @@
 		};
 		A26BE20F1E32334500501B0C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 76676EC7812AD8BC57A2378C /* Pods-NEFEnduro.debug.xcconfig */;
+			baseConfigurationReference = E4AE5456721894D5D119D8F8 /* Pods-NEFEnduro.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -516,7 +504,7 @@
 		};
 		A26BE2101E32334500501B0C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 448789B0C7C4C8EF6111C8E3 /* Pods-NEFEnduro.release.xcconfig */;
+			baseConfigurationReference = D0631D8E68EA3DEB09BE1307 /* Pods-NEFEnduro.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
