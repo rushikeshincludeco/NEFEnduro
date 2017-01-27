@@ -7,16 +7,19 @@
 //
 
 import UIKit
+import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    let apiKey = "AIzaSyDGvYxVA7Siozy0-WSgiR6PKyV3i0OciOs"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         self.printFonts()
+        GMSServices.provideAPIKey(apiKey)
+
         
         //        let notificationTypes: UIUserNotificationType = [UIUserNotificationType.Alert, UIUserNotificationType.Badge, UIUserNotificationType.Sound]
         //        let pushNotificationSettings = UIUserNotificationSettings(forTypes: notificationTypes, categories: nil)
