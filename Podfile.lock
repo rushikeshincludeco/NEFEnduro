@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (4.2.0)
+  - Alamofire (4.3.0)
   - GoogleMaps (2.1.1):
     - GoogleMaps/Maps (= 2.1.1)
   - GoogleMaps/Base (2.1.1)
@@ -7,6 +7,7 @@ PODS:
     - GoogleMaps/Base
   - GooglePlaces (2.1.1):
     - GoogleMaps/Base (= 2.1.1)
+  - HFCardCollectionViewLayout (0.3.2)
   - iCarousel (1.8.3)
   - SnapKit (3.1.2)
   - TransitionAnimation (4.0.0):
@@ -18,6 +19,7 @@ DEPENDENCIES:
   - Alamofire
   - GoogleMaps
   - GooglePlaces
+  - HFCardCollectionViewLayout
   - iCarousel (~> 1.8)
   - SnapKit (~> 3.1.2)
   - TransitionAnimation (~> 4.0.0)
@@ -25,19 +27,16 @@ DEPENDENCIES:
   - XCDYouTubeKit (~> 2.5)
 
 SPEC CHECKSUMS:
-  Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
+  Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
   GoogleMaps: a5b5bbe47734e2443bde781a6aa64e69fdb6d785
   GooglePlaces: 35636d86e5020cba3856eb988c09a5491de0a65a
+  HFCardCollectionViewLayout: 7cb1608dca7acf9306d50e2a5cb52613d6d1dd38
   iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
   SnapKit: 12b24f569cb7c143acc9c22b9d91b23e7b1c84a2
   TransitionAnimation: c397b9ca41ab593b35b1e8f8673df17bae0db20a
   TransitionTreasury: dcf3fe6e5c740525d9e7d4544af45e6fbfd71c88
   XCDYouTubeKit: 90690f9e3523735dc93b8024269d991b0cfffe78
 
-<<<<<<< HEAD
-PODFILE CHECKSUM: dc33afd3b57dfa208fc2755514f7af0dba0827a7
-=======
-PODFILE CHECKSUM: 38a3fadf5f338d61ec8da4386c5615f582860585
->>>>>>> origin/master
+PODFILE CHECKSUM: bfa18b2d4e7528171307703f94b76bd98af5590e
 
-COCOAPODS: 1.1.0.rc.2
+COCOAPODS: 1.1.1

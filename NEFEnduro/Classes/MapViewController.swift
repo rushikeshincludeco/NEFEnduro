@@ -155,19 +155,21 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, XMLParserD
                                             cmarker.title = "Current Location"
                                             cmarker.map = self.mapView
                                             
-                                            for route in routes as! [AnyObject] {
-                                                let routeOverviewPolyline = route["overview_polyline"]
-                                                let points = routeOverviewPolyline?["points"]
-                                                let path = GMSPath.init(fromEncodedPath: points as! String)
-                                                let polyline = GMSPolyline.init(path: path)
-                                                polyline.strokeColor = UIColor.redColor()
-                                                if routeOverviewPolyline?.containsObject(curLocation) == true {
-                                                    self.drawPolyline(curLocation, isOnPath: true)
-                                                } else {
-                                                    self.drawPolyline(curLocation, isOnPath: false)
+                                            for route in routes {
+                                                if let route = route as? [String:AnyObject] {
+                                                    let routeOverviewPolyline = route["overview_polyline"]
+                                                    let points = routeOverviewPolyline?["points"]
+                                                    let path = GMSPath.init(fromEncodedPath: points as! String)
+                                                    let polyline = GMSPolyline.init(path: path)
+                                                    polyline.strokeColor = UIColor.red
+                                                    if routeOverviewPolyline?.contains(curLocation) == true {
+                                                        self.drawPolyline(station: curLocation, isOnPath: true)
+                                                    } else {
+                                                        self.drawPolyline(station: curLocation, isOnPath: false)
+                                                    }
+                                                    polyline.strokeWidth = 5
+                                                    polyline.map = self.mapView
                                                 }
-                                                polyline.strokeWidth = 5
-                                                polyline.map = self.mapView
                                             }
                                         }
                                     }
@@ -208,8 +210,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, XMLParserD
                 let lat = boundaries[index].latitude
                 let long = boundaries[index].longitude
                 let annotation = Station(latitude: lat, longitude: long)
-                annota
-                tions.append(annotation)
+                annotations.append(annotation)
             }
         }
         return annotations

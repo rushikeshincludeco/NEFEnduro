@@ -57,11 +57,15 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         collectionView.snp.makeConstraints { (make) in
             make.left.right.top.bottom.equalTo(view)
         }
-        view.layoutIfNeeded()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+        } catch {
+            print("Couldn't set category!")
+        }
         videoPlayerViewController.moviePlayer.play()
         self.navigationController?.isNavigationBarHidden = true
     }
@@ -163,10 +167,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        self.type = filterDict[indexPath.row]
-//        let model = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CategoryTableViewController") as! CategoryTableViewController
-//        model.modalDelegate = self
-//        tr_presentViewController(model, method: TRPresentTransitionMethod.twitter)
         
         if let cell = collectionView.cellForItem(at: indexPath) as? CustomCollectionViewCell {
             
