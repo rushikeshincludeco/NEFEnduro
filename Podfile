@@ -9,5 +9,5 @@ target 'NEFEnduro' do
     pod 'XCDYouTubeKit', '~> 2.5'
     pod 'GoogleMaps'
     pod 'GooglePlaces'
-    
+    pod 'Alamofire'
 end

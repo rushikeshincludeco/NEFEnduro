@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1">
+ <trk>
+  <name>
+   University of Pune 2.5K loop
+  </name>
+  <trkseg>
+   <trkpt lat="18.54432" lon="73.828"/>
+   <trkpt lat="18.54679" lon="73.82623"/>
+   <trkpt lat="18.54711" lon="73.82609"/>
+   <trkpt lat="18.5475" lon="73.82588"/>
+   <trkpt lat="18.54785" lon="73.82564"/>
+   <trkpt lat="18.54951" lon="73.82442"/>
+   <trkpt lat="18.55002" lon="73.82423"/>
+   <trkpt lat="18.55002" lon="73.82423"/>
+   <trkpt lat="18.55052" lon="73.82411"/>
+   <trkpt lat="18.55109" lon="73.82413"/>
+   <trkpt lat="18.55148" lon="73.82426"/>
+   <trkpt lat="18.55167" lon="73.82437"/>
+   <trkpt lat="18.55195" lon="73.82449"/>
+   <trkpt lat="18.55228" lon="73.82458"/>
+   <trkpt lat="18.55247" lon="73.82462"/>
+   <trkpt lat="18.55245" lon="73.8248"/>
+   <trkpt lat="18.5521" lon="73.82498"/>
+   <trkpt lat="18.55203" lon="73.82522"/>
+   <trkpt lat="18.552" lon="73.82542"/>
+   <trkpt lat="18.55202" lon="73.82558"/>
+   <trkpt lat="18.55203" lon="73.82561"/>
+   <trkpt lat="18.55203" lon="73.82561"/>
+   <trkpt lat="18.55219" lon="73.82597"/>
+   <trkpt lat="18.5523" lon="73.82612"/>
+   <trkpt lat="18.55239" lon="73.8262"/>
+   <trkpt lat="18.55259" lon="73.82631"/>
+   <trkpt lat="18.55253" lon="73.82644"/>
+   <trkpt lat="18.55217" lon="73.82659"/>
+   <trkpt lat="18.55168" lon="73.82687"/>
+   <trkpt lat="18.55117" lon="73.8271"/>
+   <trkpt lat="18.55051" lon="73.82741"/>
+   <trkpt lat="18.55011" lon="73.82759"/>
+   <trkpt lat="18.5499" lon="73.82765"/>
+   <trkpt lat="18.54955" lon="73.82772"/>
+   <trkpt lat="18.54797" lon="73.82808"/>
+   <trkpt lat="18.54797" lon="73.82808"/>
+   <trkpt lat="18.54669" lon="73.82838"/>
+   <trkpt lat="18.54487" lon="73.82882"/>
+   <trkpt lat="18.54436" lon="73.82891"/>
+   <trkpt lat="18.54414" lon="73.82891"/>
+   <trkpt lat="18.54379" lon="73.82883"/>
+   <trkpt lat="18.54329" lon="73.82874"/>
+   <trkpt lat="18.54304" lon="73.8287"/>
+   <trkpt lat="18.54395" lon="73.82827"/>
+   <trkpt lat="18.54419" lon="73.8281"/>
+  </trkseg>
+ </trk>
+</gpx>

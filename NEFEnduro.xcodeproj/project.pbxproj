@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		15D3B84066599807A690667E /* Pods_NEFEnduro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 736E8D32D24AE9B739CB5984 /* Pods_NEFEnduro.framework */; };
+		62103BBE1E3B12B7003C0196 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62103BBC1E3B12B7003C0196 /* MapViewController.swift */; };
+		62103BBF1E3B12B7003C0196 /* path.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 62103BBD1E3B12B7003C0196 /* path.gpx */; };
 		A20389E01E327CD90007C9D2 /* A Love of Thunder - ReadMe.txt in Resources */ = {isa = PBXBuildFile; fileRef = A20389DD1E327CD90007C9D2 /* A Love of Thunder - ReadMe.txt */; };
 		A20389E11E327CD90007C9D2 /* ALoveofThunder.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A20389DE1E327CD90007C9D2 /* ALoveofThunder.ttf */; };
 		A20389E21E327CD90007C9D2 /* a-love-of-thunder.gif in Resources */ = {isa = PBXBuildFile; fileRef = A20389DF1E327CD90007C9D2 /* a-love-of-thunder.gif */; };
@@ -42,6 +44,8 @@
 
 /* Begin PBXFileReference section */
 		448789B0C7C4C8EF6111C8E3 /* Pods-NEFEnduro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NEFEnduro.release.xcconfig"; path = "Pods/Target Support Files/Pods-NEFEnduro/Pods-NEFEnduro.release.xcconfig"; sourceTree = "<group>"; };
+		62103BBC1E3B12B7003C0196 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		62103BBD1E3B12B7003C0196 /* path.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = path.gpx; sourceTree = "<group>"; };
 		736E8D32D24AE9B739CB5984 /* Pods_NEFEnduro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NEFEnduro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76676EC7812AD8BC57A2378C /* Pods-NEFEnduro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NEFEnduro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NEFEnduro/Pods-NEFEnduro.debug.xcconfig"; sourceTree = "<group>"; };
 		A20389DD1E327CD90007C9D2 /* A Love of Thunder - ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "A Love of Thunder - ReadMe.txt"; sourceTree = "<group>"; };
@@ -190,6 +194,8 @@
 				A26BE2171E32373000501B0C /* Application */,
 				A26BE2141E32372A00501B0C /* ViewController.swift */,
 				A2038A081E3291530007C9D2 /* CategoryTableViewController.swift */,
+				62103BBC1E3B12B7003C0196 /* MapViewController.swift */,
+				62103BBD1E3B12B7003C0196 /* path.gpx */,
 				A26BE21F1E32457A00501B0C /* CollectionVIew Cells */,
 				A20389DB1E327CC30007C9D2 /* Fonts */,
 				A26BE2181E323A3900501B0C /* Animation Controllers */,
@@ -306,6 +312,7 @@
 				A2038A011E327CE50007C9D2 /* Roboto-LightItalic.ttf in Resources */,
 				A2038A031E327CE50007C9D2 /* Roboto-MediumItalic.ttf in Resources */,
 				A20389E21E327CD90007C9D2 /* a-love-of-thunder.gif in Resources */,
+				62103BBF1E3B12B7003C0196 /* path.gpx in Resources */,
 				A20389E11E327CD90007C9D2 /* ALoveofThunder.ttf in Resources */,
 				A2038A061E327CE50007C9D2 /* Roboto-ThinItalic.ttf in Resources */,
 				A20389FD1E327CE50007C9D2 /* Roboto-Condensed.ttf in Resources */,
@@ -373,6 +380,7 @@
 				A26BE2151E32372A00501B0C /* AppDelegate.swift in Sources */,
 				A26BE21C1E323A5B00501B0C /* CubeAnimationController.swift in Sources */,
 				A2038A091E3291530007C9D2 /* CategoryTableViewController.swift in Sources */,
+				62103BBE1E3B12B7003C0196 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,6 +503,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 76676EC7812AD8BC57A2378C /* Pods-NEFEnduro.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8DMCVMABTV;
 				INFOPLIST_FILE = NEFEnduro/Info.plist;
@@ -509,6 +518,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 448789B0C7C4C8EF6111C8E3 /* Pods-NEFEnduro.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8DMCVMABTV;
 				INFOPLIST_FILE = NEFEnduro/Info.plist;
