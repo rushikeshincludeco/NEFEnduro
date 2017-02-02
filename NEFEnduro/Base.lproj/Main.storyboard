@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="b0v-Jt-tg3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="b0v-Jt-tg3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,25 +27,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1648.8" y="-546.47676161919048"/>
-        </scene>
-        <!--Category Table View Controller-->
-        <scene sceneID="Seb-kH-Ix6">
-            <objects>
-                <viewController storyboardIdentifier="CategoryTableViewController" id="Y6o-xL-W6M" customClass="CategoryTableViewController" customModule="NEFEnduro" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="kDL-sm-UHB"/>
-                        <viewControllerLayoutGuide type="bottom" id="fqk-qv-tbW"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="vhd-92-CYZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="u70-il-N3H" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2424.8000000000002" y="-546.47676161919048"/>
+            <point key="canvasLocation" x="1479" y="-546"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WDZ-35-mO8">
@@ -62,6 +46,144 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Q7-eM-Sqg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="709.60000000000002" y="-546.47676161919048"/>
+        </scene>
+        <!--Example-->
+        <scene sceneID="MCp-Y0-aTS">
+            <objects>
+                <collectionViewController storyboardIdentifier="CategoryTableViewController" id="f6A-J6-n6M" customClass="CategoryTableViewController" customModule="NEFEnduro" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" prefetchingEnabled="NO" id="PSw-mA-jwn">
+                        <rect key="frame" x="0.0" y="0.0" width="384" height="512"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewLayout key="collectionViewLayout" id="6zk-4O-Y0u" customClass="HFCardCollectionViewLayout" customModule="HFCardCollectionViewLayout"/>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CardCell" id="XIb-jw-8BK" customClass="ExampleCollectionViewCell" customModule="NEFEnduro" customModuleProvider="target">
+                                <rect key="frame" x="32" y="0.0" width="320" height="315"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="315"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tHQ-lU-ORS">
+                                            <rect key="frame" x="0.0" y="80" width="320" height="235"/>
+                                            <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </tableView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enduro 100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CRL-aB-Cn7">
+                                            <rect key="frame" x="8" y="8" width="140" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="140" id="Un6-Sb-04j"/>
+                                                <constraint firstAttribute="height" constant="21" id="jnM-ex-Ix6"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="0.84628080989999999" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                            <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.57317341550000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iYb-QG-tU1">
+                                            <rect key="frame" x="120" y="36" width="80" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="80" id="XK2-IE-GDf"/>
+                                                <constraint firstAttribute="height" constant="40" id="o3L-Rh-6u8"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <state key="normal" title="Flip Card">
+                                                <color key="titleColor" red="0.99272640479999996" green="0.98591910729999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="buttonFlipAction" destination="XIb-jw-8BK" eventType="touchUpInside" id="9lm-DT-bOi"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </view>
+                                <color key="backgroundColor" red="0.43642729920000001" green="0.43642729920000001" blue="0.43642729920000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="tHQ-lU-ORS" firstAttribute="leading" secondItem="XIb-jw-8BK" secondAttribute="leading" id="1Ua-Ic-ABa"/>
+                                    <constraint firstAttribute="trailing" secondItem="tHQ-lU-ORS" secondAttribute="trailing" id="6Yt-8R-wdV"/>
+                                    <constraint firstItem="CRL-aB-Cn7" firstAttribute="leading" secondItem="XIb-jw-8BK" secondAttribute="leadingMargin" id="7YV-h3-ZYb"/>
+                                    <constraint firstItem="tHQ-lU-ORS" firstAttribute="top" secondItem="iYb-QG-tU1" secondAttribute="bottom" constant="4" id="Gfb-nq-5TN"/>
+                                    <constraint firstItem="CRL-aB-Cn7" firstAttribute="top" secondItem="XIb-jw-8BK" secondAttribute="topMargin" id="HGc-DF-NKn"/>
+                                    <constraint firstAttribute="bottom" secondItem="tHQ-lU-ORS" secondAttribute="bottom" id="NDi-LH-G6A"/>
+                                    <constraint firstItem="tHQ-lU-ORS" firstAttribute="top" secondItem="XIb-jw-8BK" secondAttribute="top" constant="80" id="aIJ-lh-YHw"/>
+                                    <constraint firstItem="iYb-QG-tU1" firstAttribute="centerX" secondItem="XIb-jw-8BK" secondAttribute="centerX" id="u1N-CA-i8u"/>
+                                </constraints>
+                                <size key="customSize" width="320" height="315"/>
+                                <connections>
+                                    <outlet property="backView" destination="DVY-Eg-dfq" id="N0K-60-FTv"/>
+                                    <outlet property="buttonFlip" destination="iYb-QG-tU1" id="xZc-eR-fNj"/>
+                                    <outlet property="labelText" destination="CRL-aB-Cn7" id="B4U-S7-iVb"/>
+                                    <outlet property="tableView" destination="tHQ-lU-ORS" id="GTG-F6-QJU"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="f6A-J6-n6M" id="v3T-1p-DUU"/>
+                            <outlet property="delegate" destination="f6A-J6-n6M" id="pwQ-JT-dgn"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Example" id="RsI-Da-PyM">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="Gwh-VO-A8d">
+                                <connections>
+                                    <action selector="addCardAction" destination="f6A-J6-n6M" id="H3k-W9-ESK"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="trash" id="GCH-yH-tmB">
+                                <connections>
+                                    <action selector="deleteCardAtIndex0orSelected" destination="f6A-J6-n6M" id="P51-ZD-MyQ"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="stop" id="ZzO-xd-whb">
+                                <connections>
+                                    <action selector="collapseAllCardsAction" destination="6zk-4O-Y0u" id="4Mj-qm-j7y"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="384" height="512"/>
+                    <connections>
+                        <outlet property="collectionView" destination="PSw-mA-jwn" id="FhC-uA-u4V"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Hz-V7-ygu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="DVY-Eg-dfq">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="400"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ML9-3d-eQf">
+                            <rect key="frame" x="0.0" y="80" width="320" height="320"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.
+
+Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8cO-lB-ND4">
+                            <rect key="frame" x="123" y="20" width="74" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="74" id="nrh-wP-teb"/>
+                                <constraint firstAttribute="height" constant="30" id="tmW-DH-IOC"/>
+                            </constraints>
+                            <state key="normal" title="Flip Back"/>
+                            <connections>
+                                <action selector="flipBackRevealedCardAction" destination="6zk-4O-Y0u" eventType="touchUpInside" id="Ki5-iY-K8b"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="ML9-3d-eQf" secondAttribute="bottom" id="BGF-C2-1yr"/>
+                        <constraint firstItem="ML9-3d-eQf" firstAttribute="top" secondItem="DVY-Eg-dfq" secondAttribute="top" constant="80" id="Ff5-5N-QxY"/>
+                        <constraint firstItem="ML9-3d-eQf" firstAttribute="leading" secondItem="DVY-Eg-dfq" secondAttribute="leading" id="Fys-SZ-ZBF"/>
+                        <constraint firstAttribute="trailing" secondItem="ML9-3d-eQf" secondAttribute="trailing" id="I3g-C8-OXO"/>
+                        <constraint firstItem="8cO-lB-ND4" firstAttribute="top" secondItem="DVY-Eg-dfq" secondAttribute="top" constant="20" id="LTN-fk-G1Q"/>
+                        <constraint firstItem="8cO-lB-ND4" firstAttribute="centerX" secondItem="DVY-Eg-dfq" secondAttribute="centerX" id="vwl-oI-Fyg"/>
+                    </constraints>
+                </view>
+            </objects>
+            <point key="canvasLocation" x="2171" y="-616"/>
         </scene>
     </scenes>
 </document>
