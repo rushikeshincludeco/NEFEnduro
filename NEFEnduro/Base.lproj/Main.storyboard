@@ -29,12 +29,30 @@
             </objects>
             <point key="canvasLocation" x="1479" y="-546"/>
         </scene>
+        <!--Map View Controller-->
+        <scene sceneID="pfW-K0-G5G">
+            <objects>
+                <viewController storyboardIdentifier="MapViewController" id="it1-ry-0gC" customClass="MapViewController" customModule="NEFEnduro" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jbp-A5-dg7"/>
+                        <viewControllerLayoutGuide type="bottom" id="eVb-R3-bPG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UmK-xm-Kkq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ENf-kp-zQY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3231" y="-546"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="WDZ-35-mO8">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="b0v-Jt-tg3" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="IPS-fH-2O4">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IPS-fH-2O4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -51,7 +69,7 @@
         <scene sceneID="MCp-Y0-aTS">
             <objects>
                 <collectionViewController storyboardIdentifier="CategoryTableViewController" id="f6A-J6-n6M" customClass="CategoryTableViewController" customModule="NEFEnduro" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" prefetchingEnabled="NO" id="PSw-mA-jwn">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" prefetchingEnabled="NO" id="PSw-mA-jwn">
                         <rect key="frame" x="0.0" y="0.0" width="384" height="512"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

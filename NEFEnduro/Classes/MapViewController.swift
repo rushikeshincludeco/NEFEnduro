@@ -12,12 +12,16 @@ import MapKit
 import GoogleMaps
 import SnapKit
 import Alamofire
+import TransitionTreasury
+import TransitionAnimation
 
-class MapViewController: UIViewController, CLLocationManagerDelegate, XMLParserDelegate, GMSMapViewDelegate {
+class MapViewController: UIViewController, CLLocationManagerDelegate, XMLParserDelegate, GMSMapViewDelegate , NavgationTransitionable {
     
-    @IBOutlet weak var mapView: GMSMapView!
+    var mapView = GMSMapView()
     var locationManager : CLLocationManager!
     var boundaries = [CLLocationCoordinate2D]()
+    var tr_pushTransition: TRNavgationTransitionDelegate?
+
     var annotations : [Station] = []
     var points: [CLLocationCoordinate2D] = [CLLocationCoordinate2D]()
     let apiKey = "AIzaSyDGvYxVA7Siozy0-WSgiR6PKyV3i0OciOs"
@@ -25,6 +29,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, XMLParserD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.addSubview(mapView)
+        mapView.snp.makeConstraints { (make) -> Void in
+            make.left.top.equalTo(view).offset(20)
+            make.right.equalTo(view).offset(-20)
+            make.height.equalTo(view.snp.height).multipliedBy(0.8)
+        }
         
         backButton.setTitle("Back", for: .normal)
         backButton.setTitleColor(UIColor.black, for: .normal)
@@ -48,7 +59,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, XMLParserD
     }
     
     func backButtonPressed(){
-        self.dismiss(animated: true, completion: nil)
+         navigationController?.popViewController(animated: true)
     }
     
     
@@ -79,7 +90,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, XMLParserD
                 break
             }
         }
-        for var j in indexOfArray...points.count-1{
+        for j in indexOfArray...points.count-1{
             inCompleteRoute.add(CLLocationCoordinate2D(latitude: points[j].latitude, longitude: points[j].longitude))
         }
         if isOnPath == true {

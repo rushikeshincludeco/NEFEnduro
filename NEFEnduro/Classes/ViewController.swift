@@ -21,9 +21,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     let nefImageView = UIImageView()
 
     //Datasource
-    let titleDict = ["Duo","Team","Solo"]
-    let filterDict = ["duo","team","solo"]
-    let imgDict = ["duoImage","teamImage","soloImage"]
+    let titleDict = ["Duo","Team","Solo","Map"]
+    let filterDict = ["duo","team","solo",""]
+    let imgDict = ["duoImage","teamImage","soloImage", ""]
     var type:String? = nil
     let videoPlayerViewController = XCDYouTubeVideoPlayerViewController()
     
@@ -77,7 +77,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     // MARK:- Collection View Data Source and Delegate
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return 4
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -163,20 +163,35 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let remainingHeight = view.frame.height - (headerHeight + footerHeight)
-        return CGSize(width: self.view.frame.width/3, height: remainingHeight);
+        if indexPath.row == 3 {
+            return CGSize(width: self.view.frame.width, height: 20)
+            
+        } else {
+            return CGSize(width: self.view.frame.width/3, height: remainingHeight);
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if let cell = collectionView.cellForItem(at: indexPath) as? CustomCollectionViewCell {
-            
-            videoPlayerViewController.moviePlayer.stop()
-            
-            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CategoryTableViewController") as! CategoryTableViewController
-            let updateTransition: TRPushTransitionMethod = .omni(keyView: cell)
-            navigationController?.tr_pushViewController(vc, method:updateTransition, statusBarStyle: .lightContent, completion: {
-                print("Pushed")
-            })
+            if indexPath.row != 3 {
+                videoPlayerViewController.moviePlayer.stop()
+                
+                let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CategoryTableViewController") as! CategoryTableViewController
+                let updateTransition: TRPushTransitionMethod = .omni(keyView: cell)
+                navigationController?.tr_pushViewController(vc, method:updateTransition, statusBarStyle: .lightContent, completion: {
+                    print("Pushed")
+                })
+            } else {
+                videoPlayerViewController.moviePlayer.stop()
+                
+                let mapViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
+                let updateTransition: TRPushTransitionMethod = .omni(keyView: cell)
+                navigationController?.tr_pushViewController(mapViewController, method:updateTransition, statusBarStyle: .lightContent, completion: {
+                    print("Pushed")
+                })
+                
+            }
         }
     }
     

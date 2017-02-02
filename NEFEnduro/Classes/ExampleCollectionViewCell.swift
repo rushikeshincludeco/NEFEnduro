@@ -14,12 +14,12 @@ class ExampleCollectionViewCell: HFCardCollectionViewCell {
     
     var cardCollectionViewLayout: HFCardCollectionViewLayout?
     
-    @IBOutlet var buttonFlip: UIButton?
-    @IBOutlet var tableView: UITableView?
-    @IBOutlet var labelText: UILabel?
+    var buttonFlip: UIButton?
+    var tableView: UITableView?
+    var labelText: UILabel?
     
-    @IBOutlet var backView: UIView?
-    @IBOutlet var buttonFlipBack: UIButton?
+    var backView: UIView?
+    var buttonFlipBack: UIButton?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -41,6 +41,4 @@ class ExampleCollectionViewCell: HFCardCollectionViewCell {
             self.cardCollectionViewLayout?.flipRevealedCard(toView: backView)
         }
     }
-    
-    
 }

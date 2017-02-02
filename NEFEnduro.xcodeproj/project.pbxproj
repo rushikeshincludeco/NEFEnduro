@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		62103BBE1E3B12B7003C0196 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62103BBC1E3B12B7003C0196 /* MapViewController.swift */; };
 		62103BBF1E3B12B7003C0196 /* path.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 62103BBD1E3B12B7003C0196 /* path.gpx */; };
+		7A0FAAE5B89AA47A00599235 /* Pods_NEFEnduro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3B0A101A6D6410A6CD18955 /* Pods_NEFEnduro.framework */; };
 		A20389E01E327CD90007C9D2 /* A Love of Thunder - ReadMe.txt in Resources */ = {isa = PBXBuildFile; fileRef = A20389DD1E327CD90007C9D2 /* A Love of Thunder - ReadMe.txt */; };
 		A20389E11E327CD90007C9D2 /* ALoveofThunder.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A20389DE1E327CD90007C9D2 /* ALoveofThunder.ttf */; };
 		A20389E21E327CD90007C9D2 /* a-love-of-thunder.gif in Resources */ = {isa = PBXBuildFile; fileRef = A20389DF1E327CD90007C9D2 /* a-love-of-thunder.gif */; };
@@ -86,19 +87,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C467C4AEBD0A40D7B5CC75BA /* Pods_NEFEnduro.framework in Frameworks */,
+				7A0FAAE5B89AA47A00599235 /* Pods_NEFEnduro.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2CF5A533116A1A9F44490940 /* Frameworks */ = {
+		65905202810B2345A5951F3D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E9090014F2B494A970CC71A1 /* Pods_NEFEnduro.framework */,
+				C3B0A101A6D6410A6CD18955 /* Pods_NEFEnduro.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7081F11667D31DF2044063CE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3B68393444AAB4F81311648F /* Pods-NEFEnduro.debug.xcconfig */,
+				01CA98C354FC8B749327147B /* Pods-NEFEnduro.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		A20389DB1E327CC30007C9D2 /* Fonts */ = {
@@ -151,8 +161,8 @@
 			children = (
 				A26BE1FE1E32334500501B0C /* NEFEnduro */,
 				A26BE1FD1E32334500501B0C /* Products */,
-				FDC9B805924F70941126B2BA /* Pods */,
-				2CF5A533116A1A9F44490940 /* Frameworks */,
+				7081F11667D31DF2044063CE /* Pods */,
+				65905202810B2345A5951F3D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -208,15 +218,6 @@
 			name = "CollectionVIew Cells";
 			sourceTree = "<group>";
 		};
-		FDC9B805924F70941126B2BA /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				E4AE5456721894D5D119D8F8 /* Pods-NEFEnduro.debug.xcconfig */,
-				D0631D8E68EA3DEB09BE1307 /* Pods-NEFEnduro.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -224,12 +225,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A26BE20E1E32334500501B0C /* Build configuration list for PBXNativeTarget "NEFEnduro" */;
 			buildPhases = (
-				B56BC2DFFFEB6A3BB2132628 /* [CP] Check Pods Manifest.lock */,
+				C414705F06B48C951382819E /* [CP] Check Pods Manifest.lock */,
 				A26BE1F81E32334500501B0C /* Sources */,
 				A26BE1F91E32334500501B0C /* Frameworks */,
 				A26BE1FA1E32334500501B0C /* Resources */,
-				6210EFE85EB792759D85EC83 /* [CP] Embed Pods Frameworks */,
-				720BCBF576ACE31A87A509EB /* [CP] Copy Pods Resources */,
+				7BCF5D1D8A4ADC1B81A46574 /* [CP] Embed Pods Frameworks */,
+				43A0E5AA21F361C2B6A632AA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -311,22 +312,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6210EFE85EB792759D85EC83 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NEFEnduro/Pods-NEFEnduro-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		720BCBF576ACE31A87A509EB /* [CP] Copy Pods Resources */ = {
+		43A0E5AA21F361C2B6A632AA /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -341,7 +327,22 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NEFEnduro/Pods-NEFEnduro-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B56BC2DFFFEB6A3BB2132628 /* [CP] Check Pods Manifest.lock */ = {
+		7BCF5D1D8A4ADC1B81A46574 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NEFEnduro/Pods-NEFEnduro-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C414705F06B48C951382819E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -489,7 +490,7 @@
 		};
 		A26BE20F1E32334500501B0C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E4AE5456721894D5D119D8F8 /* Pods-NEFEnduro.debug.xcconfig */;
+			baseConfigurationReference = 3B68393444AAB4F81311648F /* Pods-NEFEnduro.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -504,7 +505,7 @@
 		};
 		A26BE2101E32334500501B0C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0631D8E68EA3DEB09BE1307 /* Pods-NEFEnduro.release.xcconfig */;
+			baseConfigurationReference = 01CA98C354FC8B749327147B /* Pods-NEFEnduro.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
