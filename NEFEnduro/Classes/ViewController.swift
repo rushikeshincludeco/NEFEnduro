@@ -13,6 +13,7 @@ import iCarousel
 import XCDYouTubeKit
 import TransitionTreasury
 import TransitionAnimation
+import HFCardCollectionViewLayout
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, NavgationTransitionable, iCarouselDelegate, iCarouselDataSource {
     
@@ -178,6 +179,11 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
                 videoPlayerViewController.moviePlayer.stop()
                 
                 let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CategoryTableViewController") as! CategoryTableViewController
+                var layoutOptions = CardLayoutSetupOptions()
+                vc.type = filterDict[indexPath.row]
+                layoutOptions.numberOfCards  = 5
+                vc.layoutOptions = layoutOptions
+
                 let updateTransition: TRPushTransitionMethod = .omni(keyView: cell)
                 navigationController?.tr_pushViewController(vc, method:updateTransition, statusBarStyle: .lightContent, completion: {
                     print("Pushed")
@@ -262,4 +268,26 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             return value
         }
     }
+}
+
+struct CardLayoutSetupOptions {
+    var firstMovableIndex: Int = 0
+    var cardHeadHeight: CGFloat = 80
+    var cardShouldExpandHeadHeight: Bool = true
+    var cardShouldStretchAtScrollTop: Bool = true
+    var cardMaximumHeight: CGFloat = 0
+    var bottomNumberOfStackedCards: Int = 5
+    var bottomStackedCardsShouldScale: Bool = true
+    var bottomCardLookoutMargin: CGFloat = 10
+    var bottomStackedCardsMaximumScale: CGFloat = 1.0
+    var bottomStackedCardsMinimumScale: CGFloat = 0.94
+    var spaceAtTopForBackgroundView: CGFloat = 0
+    var spaceAtTopShouldSnap: Bool = true
+    var spaceAtBottom: CGFloat = 0
+    var scrollAreaTop: CGFloat = 120
+    var scrollAreaBottom: CGFloat = 120
+    var scrollShouldSnapCardHead: Bool = false
+    var scrollStopCardsAtTop: Bool = true
+    
+    var numberOfCards: Int = 15
 }

@@ -114,6 +114,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, XMLParserD
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestAlwaysAuthorization()
         locationManager.requestWhenInUseAuthorization()
+        locationManager.distanceFilter = 100.0 // Will notify the LocationManager every 100 meters
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
         if CLLocationManager.locationServicesEnabled() {
             locationManager.startUpdatingHeading()
@@ -123,12 +125,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, XMLParserD
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        manager.stopUpdatingLocation()
+        manager.delegate = nil
         if let userLocation:CLLocation = locations.last {
             let camera = GMSCameraPosition.camera(withTarget: (CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)), zoom: 15)
             mapView.isMyLocationEnabled = true
             mapView.camera = camera
             
-            let curLocation = Station(latitude: 18.55217, longitude: 73.826589999999996)
+            let curLocation = Station(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
             let destLocation = Station(latitude: (points.first?.latitude)!, longitude: (points.first?.longitude)!)
             
             let directionURL = "https://maps.googleapis.com/maps/api/directions/json?origin=\(curLocation.latitude.description),\(curLocation.longitude)&destination=\(destLocation.latitude),\(destLocation.longitude)&alternatives=false&key=\(apiKey)"
@@ -145,10 +149,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, XMLParserD
                             if json["error"] != nil {
                                 
                             } else {
-                                if let routes : [String: AnyObject] = json["routes"] as? [String: AnyObject]{
+                                if let routes = json.value(forKey: "routes")  {
                                     
-                                    if let overview = routes["overview_polyline"] {
-                                        let overViewPolyLine = overview["points"]
+                                    if let overview = (routes as AnyObject).value(forKey: "overview_polyline")//["overview_polyline"] as? NSDictionary
+                                    {
+                                        let overViewPolyLine = (overview as AnyObject).value(forKey:"points")
                                         if overViewPolyLine != nil {
                                             let smarker = GMSMarker()
                                             smarker.position = CLLocationCoordinate2D(latitude: (self.annotations.first?.coordinate.latitude)!, longitude: (self.annotations.first?.coordinate.longitude)!)
@@ -166,7 +171,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, XMLParserD
                                             cmarker.title = "Current Location"
                                             cmarker.map = self.mapView
                                             
-                                            for route in routes {
+                                            for route in routes as! NSArray {
                                                 if let route = route as? [String:AnyObject] {
                                                     let routeOverviewPolyline = route["overview_polyline"]
                                                     let points = routeOverviewPolyline?["points"]

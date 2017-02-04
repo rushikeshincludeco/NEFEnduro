@@ -16,45 +16,46 @@ class CategoryTableViewController:  UICollectionViewController, HFCardCollection
     
     //Card Layout
     var cardCollectionViewLayout: HFCardCollectionViewLayout?
+    var layoutOptions = CardLayoutSetupOptions()
+
 
     /// Transiton delegate
     var tr_pushTransition: TRNavgationTransitionDelegate?
-    
     var colorArray = [UIColor]()
-    
     var shouldSetupBackgroundView = true
     var type:String? = nil
+    var finalResult : [[String:AnyObject]] = []
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        readFromJson()
 
         self.colorArray.insert(UIColor.red, at: 0)
         self.colorArray.insert(UIColor.blue, at: 1)
-        self.colorArray.insert(UIColor.yellow, at: 2)
-
+        self.colorArray.insert(UIColor.green, at: 2)
         navigationController?.isNavigationBarHidden = false
-        self.collectionView?.register(ExampleCollectionViewCell.self, forCellWithReuseIdentifier: "CardCell")
         
         if let cardCollectionViewLayout = self.collectionView?.collectionViewLayout as? HFCardCollectionViewLayout {
             self.cardCollectionViewLayout = cardCollectionViewLayout
         }
         
-        view.backgroundColor = UIColor.red
-        
-        let button = UIButton()
-        view.addSubview(button)
-        button.setTitle("Back", for: .normal)
-        button.addTarget(self, action: #selector(self.popButtonTapped(button:)), for: .touchUpInside)
-        button.snp.makeConstraints { (make) in
-            make.center.equalTo(view)
-            make.height.width.equalTo(40)
-        }
+//        view.backgroundColor = UIColor.red
+//        
+//        let button = UIButton()
+//        view.addSubview(button)
+//        button.setTitle("Back", for: .normal)
+//        button.addTarget(self, action: #selector(self.popButtonTapped(button:)), for: .touchUpInside)
+//        button.snp.makeConstraints { (make) in
+//            make.center.equalTo(view)
+//            make.height.width.equalTo(40)
+//        }
     }
 
     // MARK: CollectionView
     
     func cardCollectionViewLayout(_ collectionViewLayout: HFCardCollectionViewLayout, canUnrevealCardAtIndex index: Int) -> Bool {
-        if(self.colorArray.count == 1) {
+        if(self.finalResult.count == 1) {
             return false
         }
         return true
@@ -75,12 +76,21 @@ class CategoryTableViewController:  UICollectionViewController, HFCardCollection
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.colorArray.count
+        return self.finalResult.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCell", for: indexPath) as! ExampleCollectionViewCell
-        cell.backgroundColor = self.colorArray[indexPath.item]
+        cell.labelText?.text = String("Name: ")?.appending(finalResult[indexPath.row]["name"] as! String)
+        let desc = String("Description: ")?.appending(finalResult[indexPath.row]["desc"] as! String)
+        cell.labelDesc?.text = desc?.replacingOccurrences(of: ". ", with: ".\n")
+        cell.labelFees?.text = String("Fees: ")?.appending(finalResult[indexPath.row]["fees"] as! String)
+        cell.buttonFlip.addTarget(self, action: #selector(self.popButtonTapped(button:)), for: .touchUpInside)
+        let prize = String("Prize: ")?.appending(finalResult[indexPath.row]["prize"] as! String)
+        cell.labelPrize?.text = prize?.replacingOccurrences(of: "|", with: "\n")
+        cell.labelSummary?.text = String("Summary: ")?.appending(finalResult[indexPath.row]["summary"] as! String)
+        cell.labelType?.text = String("Type: ")?.appending(finalResult[indexPath.row]["type"] as! String)
+        cell.backgroundColor = self.colorArray[indexPath.item  % 3]
         return cell
     }
     
@@ -89,6 +99,10 @@ class CategoryTableViewController:  UICollectionViewController, HFCardCollection
     }
     
     override func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let tempResult = self.finalResult[sourceIndexPath.item]
+        self.finalResult.remove(at: sourceIndexPath.item)
+        self.finalResult.insert(tempResult, at: destinationIndexPath.item)
+        
         let tempColor = self.colorArray[sourceIndexPath.item]
         self.colorArray.remove(at: sourceIndexPath.item)
         self.colorArray.insert(tempColor, at: destinationIndexPath.item)
@@ -103,4 +117,22 @@ class CategoryTableViewController:  UICollectionViewController, HFCardCollection
         // Dispose of any resources that can be recreated.
     }
 
+    func readFromJson() {
+        
+        let fileName = "categories"
+        let filePath = getFilePath(fileName: fileName)
+        let data =  NSData(contentsOf: NSURL(fileURLWithPath: filePath!) as URL)
+        do {
+            let json = try JSONSerialization.jsonObject(with: data! as Data, options: .allowFragments) as? [[String:AnyObject]]
+            let resultPredicate = NSPredicate(format: "type contains[c] %@", type!)
+            finalResult = json!.filter{resultPredicate.evaluate(with: $0)}
+        } catch {
+            print ("error")
+        }
+    }
+    
+    func getFilePath(fileName: String) -> String? {
+        return Bundle.main.path(forResource: fileName, ofType: "json")
+    }
+    
 }

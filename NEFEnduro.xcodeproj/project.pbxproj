@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		62103BBE1E3B12B7003C0196 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62103BBC1E3B12B7003C0196 /* MapViewController.swift */; };
 		62103BBF1E3B12B7003C0196 /* path.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 62103BBD1E3B12B7003C0196 /* path.gpx */; };
-		7A0FAAE5B89AA47A00599235 /* Pods_NEFEnduro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3B0A101A6D6410A6CD18955 /* Pods_NEFEnduro.framework */; };
+		621E14A41E43BC0600E47BFC /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = 621E14A31E43BC0600E47BFC /* categories.json */; };
+		7A0FAAE5B89AA47A00599235 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		A20389E01E327CD90007C9D2 /* A Love of Thunder - ReadMe.txt in Resources */ = {isa = PBXBuildFile; fileRef = A20389DD1E327CD90007C9D2 /* A Love of Thunder - ReadMe.txt */; };
 		A20389E11E327CD90007C9D2 /* ALoveofThunder.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A20389DE1E327CD90007C9D2 /* ALoveofThunder.ttf */; };
 		A20389E21E327CD90007C9D2 /* a-love-of-thunder.gif in Resources */ = {isa = PBXBuildFile; fileRef = A20389DF1E327CD90007C9D2 /* a-love-of-thunder.gif */; };
@@ -39,12 +40,16 @@
 		A26BE2161E32372A00501B0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26BE2141E32372A00501B0C /* ViewController.swift */; };
 		A26BE21E1E32457600501B0C /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26BE21D1E32457600501B0C /* CustomCollectionViewCell.swift */; };
 		A2B894021E3B9EF400E48C60 /* ExampleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B894011E3B9EF400E48C60 /* ExampleCollectionViewCell.swift */; };
-		C467C4AEBD0A40D7B5CC75BA /* Pods_NEFEnduro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9090014F2B494A970CC71A1 /* Pods_NEFEnduro.framework */; };
+		C693CC326C6FE8D683F8D07E /* Pods_NEFEnduro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB9D59922B81ADA79650E69 /* Pods_NEFEnduro.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		15A00E083BBA464741682EE1 /* Pods-NEFEnduro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NEFEnduro.release.xcconfig"; path = "Pods/Target Support Files/Pods-NEFEnduro/Pods-NEFEnduro.release.xcconfig"; sourceTree = "<group>"; };
+		1AB9D59922B81ADA79650E69 /* Pods_NEFEnduro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NEFEnduro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62103BBC1E3B12B7003C0196 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		62103BBD1E3B12B7003C0196 /* path.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = path.gpx; sourceTree = "<group>"; };
+		621E14A31E43BC0600E47BFC /* categories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = categories.json; sourceTree = "<group>"; };
+		8DB640AC0914AD6D7C323675 /* Pods-NEFEnduro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NEFEnduro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NEFEnduro/Pods-NEFEnduro.debug.xcconfig"; sourceTree = "<group>"; };
 		A20389DD1E327CD90007C9D2 /* A Love of Thunder - ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "A Love of Thunder - ReadMe.txt"; sourceTree = "<group>"; };
 		A20389DE1E327CD90007C9D2 /* ALoveofThunder.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ALoveofThunder.ttf; sourceTree = "<group>"; };
 		A20389DF1E327CD90007C9D2 /* a-love-of-thunder.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "a-love-of-thunder.gif"; sourceTree = "<group>"; };
@@ -77,9 +82,6 @@
 		A26BE2141E32372A00501B0C /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A26BE21D1E32457600501B0C /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		A2B894011E3B9EF400E48C60 /* ExampleCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleCollectionViewCell.swift; sourceTree = "<group>"; };
-		D0631D8E68EA3DEB09BE1307 /* Pods-NEFEnduro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NEFEnduro.release.xcconfig"; path = "Pods/Target Support Files/Pods-NEFEnduro/Pods-NEFEnduro.release.xcconfig"; sourceTree = "<group>"; };
-		E4AE5456721894D5D119D8F8 /* Pods-NEFEnduro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NEFEnduro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NEFEnduro/Pods-NEFEnduro.debug.xcconfig"; sourceTree = "<group>"; };
-		E9090014F2B494A970CC71A1 /* Pods_NEFEnduro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NEFEnduro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +89,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A0FAAE5B89AA47A00599235 /* Pods_NEFEnduro.framework in Frameworks */,
+				7A0FAAE5B89AA47A00599235 /* (null) in Frameworks */,
+				C693CC326C6FE8D683F8D07E /* Pods_NEFEnduro.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,7 +100,7 @@
 		65905202810B2345A5951F3D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C3B0A101A6D6410A6CD18955 /* Pods_NEFEnduro.framework */,
+				1AB9D59922B81ADA79650E69 /* Pods_NEFEnduro.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -105,8 +108,8 @@
 		7081F11667D31DF2044063CE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3B68393444AAB4F81311648F /* Pods-NEFEnduro.debug.xcconfig */,
-				01CA98C354FC8B749327147B /* Pods-NEFEnduro.release.xcconfig */,
+				8DB640AC0914AD6D7C323675 /* Pods-NEFEnduro.debug.xcconfig */,
+				15A00E083BBA464741682EE1 /* Pods-NEFEnduro.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 				A26BE2141E32372A00501B0C /* ViewController.swift */,
 				A2038A081E3291530007C9D2 /* CategoryTableViewController.swift */,
 				62103BBC1E3B12B7003C0196 /* MapViewController.swift */,
+				621E14A31E43BC0600E47BFC /* categories.json */,
 				62103BBD1E3B12B7003C0196 /* path.gpx */,
 				A26BE21F1E32457A00501B0C /* CollectionVIew Cells */,
 				A20389DB1E327CC30007C9D2 /* Fonts */,
@@ -294,6 +298,7 @@
 				A2038A071E327CE50007C9D2 /* Roboto_Specimen_Book.pdf in Resources */,
 				A2038A021E327CE50007C9D2 /* Roboto-Medium.ttf in Resources */,
 				A20389F81E327CE50007C9D2 /* Roboto-BlackItalic.ttf in Resources */,
+				621E14A41E43BC0600E47BFC /* categories.json in Resources */,
 				A26BE2071E32334500501B0C /* Assets.xcassets in Resources */,
 				A20389FE1E327CE50007C9D2 /* Roboto-CondensedItalic.ttf in Resources */,
 				A2038A001E327CE50007C9D2 /* Roboto-Light.ttf in Resources */,
@@ -490,7 +495,7 @@
 		};
 		A26BE20F1E32334500501B0C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B68393444AAB4F81311648F /* Pods-NEFEnduro.debug.xcconfig */;
+			baseConfigurationReference = 8DB640AC0914AD6D7C323675 /* Pods-NEFEnduro.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -505,7 +510,7 @@
 		};
 		A26BE2101E32334500501B0C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 01CA98C354FC8B749327147B /* Pods-NEFEnduro.release.xcconfig */;
+			baseConfigurationReference = 15A00E083BBA464741682EE1 /* Pods-NEFEnduro.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;

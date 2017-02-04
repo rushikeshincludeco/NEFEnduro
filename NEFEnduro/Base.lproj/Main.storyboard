@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="b0v-Jt-tg3">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="b0v-Jt-tg3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -52,7 +51,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="b0v-Jt-tg3" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IPS-fH-2O4">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="IPS-fH-2O4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -75,62 +74,80 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewLayout key="collectionViewLayout" id="6zk-4O-Y0u" customClass="HFCardCollectionViewLayout" customModule="HFCardCollectionViewLayout"/>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CardCell" id="XIb-jw-8BK" customClass="ExampleCollectionViewCell" customModule="NEFEnduro" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CardCell" id="aa5-0E-jO2" customClass="ExampleCollectionViewCell" customModule="NEFEnduro" customModuleProvider="target">
                                 <rect key="frame" x="32" y="0.0" width="320" height="315"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="315"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tHQ-lU-ORS">
-                                            <rect key="frame" x="0.0" y="80" width="320" height="235"/>
-                                            <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </tableView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enduro 100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CRL-aB-Cn7">
-                                            <rect key="frame" x="8" y="8" width="140" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="140" id="Un6-Sb-04j"/>
-                                                <constraint firstAttribute="height" constant="21" id="jnM-ex-Ix6"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" white="1" alpha="0.84628080989999999" colorSpace="calibratedWhite"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Example Card Cell" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kfL-cR-b8m">
+                                            <rect key="frame" x="8" y="8" width="157" height="36"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                             <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.57317341550000001" colorSpace="custom" customColorSpace="sRGB"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iYb-QG-tU1">
-                                            <rect key="frame" x="120" y="36" width="80" height="40"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="80" id="XK2-IE-GDf"/>
-                                                <constraint firstAttribute="height" constant="40" id="o3L-Rh-6u8"/>
-                                            </constraints>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qgd-ZU-ZCE">
+                                            <rect key="frame" x="120" y="36" width="80" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <state key="normal" title="Flip Card">
+                                            <state key="normal" title="Back">
                                                 <color key="titleColor" red="0.99272640479999996" green="0.98591910729999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </state>
                                             <connections>
-                                                <action selector="buttonFlipAction" destination="XIb-jw-8BK" eventType="touchUpInside" id="9lm-DT-bOi"/>
+                                                <action selector="buttonFlipAction" destination="aa5-0E-jO2" eventType="touchUpInside" id="XTl-XF-zfr"/>
                                             </connections>
                                         </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vg3-DR-E7u">
+                                            <rect key="frame" x="237" y="51" width="42" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bfi-CE-sJO">
+                                            <rect key="frame" x="205" y="17" width="42" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HoN-9X-Yeg">
+                                            <rect key="frame" x="263" y="17" width="42" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hFm-Jx-6mF">
+                                            <rect key="frame" x="15" y="38" width="42" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3B9-k8-zzJ">
+                                            <rect key="frame" x="63" y="53" width="42" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </view>
                                 <color key="backgroundColor" red="0.43642729920000001" green="0.43642729920000001" blue="0.43642729920000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="tHQ-lU-ORS" firstAttribute="leading" secondItem="XIb-jw-8BK" secondAttribute="leading" id="1Ua-Ic-ABa"/>
-                                    <constraint firstAttribute="trailing" secondItem="tHQ-lU-ORS" secondAttribute="trailing" id="6Yt-8R-wdV"/>
-                                    <constraint firstItem="CRL-aB-Cn7" firstAttribute="leading" secondItem="XIb-jw-8BK" secondAttribute="leadingMargin" id="7YV-h3-ZYb"/>
-                                    <constraint firstItem="tHQ-lU-ORS" firstAttribute="top" secondItem="iYb-QG-tU1" secondAttribute="bottom" constant="4" id="Gfb-nq-5TN"/>
-                                    <constraint firstItem="CRL-aB-Cn7" firstAttribute="top" secondItem="XIb-jw-8BK" secondAttribute="topMargin" id="HGc-DF-NKn"/>
-                                    <constraint firstAttribute="bottom" secondItem="tHQ-lU-ORS" secondAttribute="bottom" id="NDi-LH-G6A"/>
-                                    <constraint firstItem="tHQ-lU-ORS" firstAttribute="top" secondItem="XIb-jw-8BK" secondAttribute="top" constant="80" id="aIJ-lh-YHw"/>
-                                    <constraint firstItem="iYb-QG-tU1" firstAttribute="centerX" secondItem="XIb-jw-8BK" secondAttribute="centerX" id="u1N-CA-i8u"/>
-                                </constraints>
                                 <size key="customSize" width="320" height="315"/>
                                 <connections>
-                                    <outlet property="backView" destination="DVY-Eg-dfq" id="N0K-60-FTv"/>
-                                    <outlet property="buttonFlip" destination="iYb-QG-tU1" id="xZc-eR-fNj"/>
-                                    <outlet property="labelText" destination="CRL-aB-Cn7" id="B4U-S7-iVb"/>
-                                    <outlet property="tableView" destination="tHQ-lU-ORS" id="GTG-F6-QJU"/>
+                                    <outlet property="buttonFlip" destination="qgd-ZU-ZCE" id="cgT-LI-9Fo"/>
+                                    <outlet property="labelDesc" destination="Bfi-CE-sJO" id="46p-eb-cNb"/>
+                                    <outlet property="labelFees" destination="vg3-DR-E7u" id="TsJ-M5-8vM"/>
+                                    <outlet property="labelPrize" destination="3B9-k8-zzJ" id="22F-bg-FyE"/>
+                                    <outlet property="labelSummary" destination="hFm-Jx-6mF" id="b1y-M5-i8M"/>
+                                    <outlet property="labelText" destination="kfL-cR-b8m" id="P3b-UC-rw3"/>
+                                    <outlet property="labelType" destination="HoN-9X-Yeg" id="uLf-K4-JCZ"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -201,7 +218,7 @@ Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed 
                     </constraints>
                 </view>
             </objects>
-            <point key="canvasLocation" x="2171" y="-616"/>
+            <point key="canvasLocation" x="2169.5999999999999" y="-616.1919040479761"/>
         </scene>
     </scenes>
 </document>

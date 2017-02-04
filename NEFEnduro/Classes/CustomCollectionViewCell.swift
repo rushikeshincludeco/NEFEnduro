@@ -23,7 +23,7 @@ class CustomCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(topLabel)
         topLabel.snp.makeConstraints { (make) in
             make.top.left.right.equalToSuperview()
-            make.height.equalTo(50)
+            make.height.equalTo(30)
         }
         
         contentView.addSubview(bottomImage)
