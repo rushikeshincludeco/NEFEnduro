@@ -10,6 +10,7 @@
 		62103BBE1E3B12B7003C0196 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62103BBC1E3B12B7003C0196 /* MapViewController.swift */; };
 		62103BBF1E3B12B7003C0196 /* path.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 62103BBD1E3B12B7003C0196 /* path.gpx */; };
 		621E14A41E43BC0600E47BFC /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = 621E14A31E43BC0600E47BFC /* categories.json */; };
+		62307C6B1E46509B004F0AFA /* NECC NEF ENDURO - RuleBook 2017.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 62307C6A1E46509B004F0AFA /* NECC NEF ENDURO - RuleBook 2017.pdf */; };
 		7A0FAAE5B89AA47A00599235 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		A20389E01E327CD90007C9D2 /* A Love of Thunder - ReadMe.txt in Resources */ = {isa = PBXBuildFile; fileRef = A20389DD1E327CD90007C9D2 /* A Love of Thunder - ReadMe.txt */; };
 		A20389E11E327CD90007C9D2 /* ALoveofThunder.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A20389DE1E327CD90007C9D2 /* ALoveofThunder.ttf */; };
@@ -49,6 +50,7 @@
 		62103BBC1E3B12B7003C0196 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		62103BBD1E3B12B7003C0196 /* path.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = path.gpx; sourceTree = "<group>"; };
 		621E14A31E43BC0600E47BFC /* categories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = categories.json; sourceTree = "<group>"; };
+		62307C6A1E46509B004F0AFA /* NECC NEF ENDURO - RuleBook 2017.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "NECC NEF ENDURO - RuleBook 2017.pdf"; sourceTree = "<group>"; };
 		8DB640AC0914AD6D7C323675 /* Pods-NEFEnduro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NEFEnduro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NEFEnduro/Pods-NEFEnduro.debug.xcconfig"; sourceTree = "<group>"; };
 		A20389DD1E327CD90007C9D2 /* A Love of Thunder - ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "A Love of Thunder - ReadMe.txt"; sourceTree = "<group>"; };
 		A20389DE1E327CD90007C9D2 /* ALoveofThunder.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ALoveofThunder.ttf; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 		A26BE2121E32372A00501B0C /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				62307C6A1E46509B004F0AFA /* NECC NEF ENDURO - RuleBook 2017.pdf */,
 				A26BE2171E32373000501B0C /* Application */,
 				A26BE2141E32372A00501B0C /* ViewController.swift */,
 				A2038A081E3291530007C9D2 /* CategoryTableViewController.swift */,
@@ -286,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A20389F61E327CE50007C9D2 /* NOTICE.txt in Resources */,
+				62307C6B1E46509B004F0AFA /* NECC NEF ENDURO - RuleBook 2017.pdf in Resources */,
 				A26BE20A1E32334500501B0C /* LaunchScreen.storyboard in Resources */,
 				A20389FB1E327CE50007C9D2 /* Roboto-BoldCondensedItalic.ttf in Resources */,
 				A20389F91E327CE50007C9D2 /* Roboto-Bold.ttf in Resources */,

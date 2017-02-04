@@ -14,6 +14,8 @@ import XCDYouTubeKit
 import TransitionTreasury
 import TransitionAnimation
 import HFCardCollectionViewLayout
+import PDFReader
+
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, NavgationTransitionable, iCarouselDelegate, iCarouselDataSource {
     
@@ -121,11 +123,24 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             
             let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Footer", for: indexPath as IndexPath)
             
+            let rulesAndRegViewButton = UIButton()
+            rulesAndRegViewButton.backgroundColor = UIColor.clear
+            rulesAndRegViewButton.setTitle("Rules and Regulations", for: .normal)
+            rulesAndRegViewButton.setTitleColor(UIColor.black, for: .normal)
+            rulesAndRegViewButton.titleLabel?.font = UIFont(name: "ALoveofThunder", size: 16)
+            rulesAndRegViewButton.addTarget(self, action: #selector(self.rulesAndRegAction(button:)), for: .touchUpInside)
+            footerView.addSubview(rulesAndRegViewButton)
+            rulesAndRegViewButton.snp.makeConstraints({ (make) in
+                make.top.left.right.equalTo(footerView)
+                make.height.equalTo(60)
+            })
+            
             let videoContainerView = UIView()
             videoContainerView.backgroundColor = UIColor.green
             footerView.addSubview(videoContainerView)
             videoContainerView.snp.makeConstraints({ (make) in
-                make.left.right.top.equalTo(footerView)
+                make.left.right.equalTo(footerView)
+                make.top.equalTo(rulesAndRegViewButton.snp.bottom)
                 make.bottom.equalTo(view)
             })
             
@@ -267,6 +282,20 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         default:
             return value
         }
+    }
+    
+    func rulesAndRegAction(button: UIButton) {
+        
+        //        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RulesAndRegViewController") as! RulesAndRegViewController
+        //        let updateTransition: TRPushTransitionMethod = .omni(keyView: button)
+        //        navigationController?.tr_pushViewController(vc, method:updateTransition, statusBarStyle: .lightContent, completion: {
+        //        })
+        
+        let documentURL = Bundle.main.url(forResource: "NECC NEF ENDURO - RuleBook 2017", withExtension: "pdf")!
+        let document = PDFDocument(fileURL: documentURL)!
+        let readerController = PDFViewController.createNew(with: document)
+        navigationController?.pushViewController(readerController, animated: true)
+        
     }
 }
 

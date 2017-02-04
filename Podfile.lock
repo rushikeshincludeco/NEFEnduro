@@ -9,6 +9,7 @@ PODS:
     - GoogleMaps/Base (= 2.1.1)
   - HFCardCollectionViewLayout (0.3.2)
   - iCarousel (1.8.3)
+  - PDFReader (2.1.6)
   - SnapKit (3.1.2)
   - TransitionAnimation (4.0.0):
     - TransitionTreasury (~> 4.0)
@@ -21,6 +22,7 @@ DEPENDENCIES:
   - GooglePlaces
   - HFCardCollectionViewLayout
   - iCarousel (~> 1.8)
+  - PDFReader (~> 2.1)
   - SnapKit (~> 3.1.2)
   - TransitionAnimation (~> 4.0.0)
   - TransitionTreasury (~> 4.0.0)
@@ -32,11 +34,12 @@ SPEC CHECKSUMS:
   GooglePlaces: 35636d86e5020cba3856eb988c09a5491de0a65a
   HFCardCollectionViewLayout: 7cb1608dca7acf9306d50e2a5cb52613d6d1dd38
   iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
+  PDFReader: c078fbfcaea16e7f896c1f5d2dd46c8020fd4c22
   SnapKit: 12b24f569cb7c143acc9c22b9d91b23e7b1c84a2
   TransitionAnimation: c397b9ca41ab593b35b1e8f8673df17bae0db20a
   TransitionTreasury: dcf3fe6e5c740525d9e7d4544af45e6fbfd71c88
   XCDYouTubeKit: 90690f9e3523735dc93b8024269d991b0cfffe78
 
-PODFILE CHECKSUM: bfa18b2d4e7528171307703f94b76bd98af5590e
+PODFILE CHECKSUM: 8eb0cc2115935ecc56493fd7165463af0a4a9cc0
 
 COCOAPODS: 1.1.0.rc.2

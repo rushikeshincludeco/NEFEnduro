@@ -13,4 +13,6 @@ target 'NEFEnduro' do
     pod 'GooglePlaces'
     pod 'Alamofire'
     pod 'HFCardCollectionViewLayout'
+    pod 'PDFReader', '~> 2.1'
+
 end
