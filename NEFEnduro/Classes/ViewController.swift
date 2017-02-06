@@ -14,8 +14,7 @@ import XCDYouTubeKit
 import TransitionTreasury
 import TransitionAnimation
 import HFCardCollectionViewLayout
-import PDFReader
-
+import UXMPDFKit
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, NavgationTransitionable, iCarouselDelegate, iCarouselDataSource {
     
@@ -24,11 +23,15 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     let nefImageView = UIImageView()
 
     //Datasource
-    let titleDict = ["Duo","Team","Solo","Map"]
+    let titleDict = ["Duo","Team","Solo","Rules & Regulations"]
     let filterDict = ["duo","team","solo",""]
     let imgDict = ["duoImage","teamImage","soloImage", ""]
     var type:String? = nil
+    
     let videoPlayerViewController = XCDYouTubeVideoPlayerViewController()
+    
+    var collectionView : UICollectionView!
+    var layout : UICollectionViewFlowLayout!
     
     var headerHeight: CGFloat = 100
     var footerHeight: CGFloat = 100
@@ -42,9 +45,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         let bgImageView = UIImageView(image: UIImage(named: "bgImage"))
         bgImageView.contentMode = .scaleAspectFill
         
-        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        self.layout = UICollectionViewFlowLayout()
         
-        let collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
+        self.collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
         view.addSubview(collectionView)
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -70,6 +73,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             print("Couldn't set category!")
         }
         videoPlayerViewController.moviePlayer.play()
+        self.collectionView.layoutSubviews()
         self.navigationController?.isNavigationBarHidden = true
     }
     
@@ -88,8 +92,11 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCollectionViewCell", for: indexPath) as! CustomCollectionViewCell 
         
         cell.topLabel.text = titleDict[indexPath.row]
+        if (indexPath.row == 3) {
+            cell.topLabel.font = UIFont(name: "ALoveofThunder", size: 20)
+            cell.topLabel.textColor = UIColor.black
+        }
         cell.bottomImage.image = UIImage(named: imgDict[indexPath.row])
-        
         cell.bottomImage.layer.shadowOffset = CGSize(width: 0, height: 10)
         cell.bottomImage.layer.shadowColor = UIColor.black.cgColor
         cell.bottomImage.layer.shadowRadius = 4
@@ -123,31 +130,20 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             
             let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Footer", for: indexPath as IndexPath)
             
-            let rulesAndRegViewButton = UIButton()
-            rulesAndRegViewButton.backgroundColor = UIColor.clear
-            rulesAndRegViewButton.setTitle("Rules and Regulations", for: .normal)
-            rulesAndRegViewButton.setTitleColor(UIColor.black, for: .normal)
-            rulesAndRegViewButton.titleLabel?.font = UIFont(name: "ALoveofThunder", size: 16)
-            rulesAndRegViewButton.addTarget(self, action: #selector(self.rulesAndRegAction(button:)), for: .touchUpInside)
-            footerView.addSubview(rulesAndRegViewButton)
-            rulesAndRegViewButton.snp.makeConstraints({ (make) in
-                make.top.left.right.equalTo(footerView)
-                make.height.equalTo(60)
-            })
-            
             let videoContainerView = UIView()
             videoContainerView.backgroundColor = UIColor.green
             footerView.addSubview(videoContainerView)
             videoContainerView.snp.makeConstraints({ (make) in
                 make.left.right.equalTo(footerView)
-                make.top.equalTo(rulesAndRegViewButton.snp.bottom)
+                make.top.equalTo(footerView)
                 make.bottom.equalTo(view)
             })
             
-            videoPlayerViewController.videoIdentifier = "0vd03koSsug"
             videoPlayerViewController.present(in: videoContainerView)
+            videoPlayerViewController.videoIdentifier = "0vd03koSsug"
             videoPlayerViewController.moviePlayer.play()
             videoPlayerViewController.moviePlayer.scalingMode = .fill
+            
             return footerView
             
         default:
@@ -178,10 +174,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let remainingHeight = view.frame.height - (headerHeight + footerHeight)
+        let remainingHeight = view.frame.height - (headerHeight + footerHeight + 30)
         if indexPath.row == 3 {
-            return CGSize(width: self.view.frame.width, height: 20)
-            
+            return CGSize(width: self.view.frame.width, height: 30)
         } else {
             return CGSize(width: self.view.frame.width/3, height: remainingHeight);
         }
@@ -190,8 +185,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if let cell = collectionView.cellForItem(at: indexPath) as? CustomCollectionViewCell {
+            
             if indexPath.row != 3 {
-                videoPlayerViewController.moviePlayer.stop()
                 
                 let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CategoryTableViewController") as! CategoryTableViewController
                 var layoutOptions = CardLayoutSetupOptions()
@@ -204,14 +199,13 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
                     print("Pushed")
                 })
             } else {
-                videoPlayerViewController.moviePlayer.stop()
+                let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PDFViewController") as! PDFViewController
                 
-                let mapViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
                 let updateTransition: TRPushTransitionMethod = .omni(keyView: cell)
-                navigationController?.tr_pushViewController(mapViewController, method:updateTransition, statusBarStyle: .lightContent, completion: {
+                navigationController?.tr_pushViewController(vc, method:updateTransition, statusBarStyle: .lightContent, completion: {
                     print("Pushed")
                 })
-                
+
             }
         }
     }
@@ -283,20 +277,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             return value
         }
     }
-    
-    func rulesAndRegAction(button: UIButton) {
-        
-        //        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RulesAndRegViewController") as! RulesAndRegViewController
-        //        let updateTransition: TRPushTransitionMethod = .omni(keyView: button)
-        //        navigationController?.tr_pushViewController(vc, method:updateTransition, statusBarStyle: .lightContent, completion: {
-        //        })
-        
-        let documentURL = Bundle.main.url(forResource: "NECC NEF ENDURO - RuleBook 2017", withExtension: "pdf")!
-        let document = PDFDocument(fileURL: documentURL)!
-        let readerController = PDFViewController.createNew(with: document)
-        navigationController?.pushViewController(readerController, animated: true)
-        
-    }
+
 }
 
 struct CardLayoutSetupOptions {

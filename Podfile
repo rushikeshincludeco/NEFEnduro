@@ -14,5 +14,5 @@ target 'NEFEnduro' do
     pod 'Alamofire'
     pod 'HFCardCollectionViewLayout'
     pod 'PDFReader', '~> 2.1'
-
+    pod 'UXMPDFKit'
 end

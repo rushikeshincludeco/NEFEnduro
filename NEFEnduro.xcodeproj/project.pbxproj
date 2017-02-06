@@ -34,6 +34,7 @@
 		A2038A061E327CE50007C9D2 /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A20389F41E327CE50007C9D2 /* Roboto-ThinItalic.ttf */; };
 		A2038A071E327CE50007C9D2 /* Roboto_Specimen_Book.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A20389F51E327CE50007C9D2 /* Roboto_Specimen_Book.pdf */; };
 		A2038A091E3291530007C9D2 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2038A081E3291530007C9D2 /* CategoryTableViewController.swift */; };
+		A20C459A1E48BC350091022F /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20C45991E48BC350091022F /* PDFViewController.swift */; };
 		A26BE2051E32334500501B0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A26BE2031E32334500501B0C /* Main.storyboard */; };
 		A26BE2071E32334500501B0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A26BE2061E32334500501B0C /* Assets.xcassets */; };
 		A26BE20A1E32334500501B0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A26BE2081E32334500501B0C /* LaunchScreen.storyboard */; };
@@ -74,6 +75,7 @@
 		A20389F41E327CE50007C9D2 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
 		A20389F51E327CE50007C9D2 /* Roboto_Specimen_Book.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Roboto_Specimen_Book.pdf; sourceTree = "<group>"; };
 		A2038A081E3291530007C9D2 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
+		A20C45991E48BC350091022F /* PDFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
 		A26BE1FC1E32334500501B0C /* NEFEnduro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NEFEnduro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A26BE2041E32334500501B0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A26BE2061E32334500501B0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				A26BE2141E32372A00501B0C /* ViewController.swift */,
 				A2038A081E3291530007C9D2 /* CategoryTableViewController.swift */,
 				62103BBC1E3B12B7003C0196 /* MapViewController.swift */,
+				A20C45991E48BC350091022F /* PDFViewController.swift */,
 				621E14A31E43BC0600E47BFC /* categories.json */,
 				62103BBD1E3B12B7003C0196 /* path.gpx */,
 				A26BE21F1E32457A00501B0C /* CollectionVIew Cells */,
@@ -378,6 +381,7 @@
 				A26BE2151E32372A00501B0C /* AppDelegate.swift in Sources */,
 				A2B894021E3B9EF400E48C60 /* ExampleCollectionViewCell.swift in Sources */,
 				A2038A091E3291530007C9D2 /* CategoryTableViewController.swift in Sources */,
+				A20C459A1E48BC350091022F /* PDFViewController.swift in Sources */,
 				62103BBE1E3B12B7003C0196 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

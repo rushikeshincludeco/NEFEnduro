@@ -31,11 +31,12 @@ class CategoryTableViewController:  UICollectionViewController, HFCardCollection
         super.viewDidLoad()
         readFromJson()
 
+        layoutOptions.cardHeadHeight = 300
+        
         self.colorArray.insert(UIColor.red, at: 0)
         self.colorArray.insert(UIColor.blue, at: 1)
         self.colorArray.insert(UIColor.green, at: 2)
-        navigationController?.isNavigationBarHidden = false
-        
+
         if let cardCollectionViewLayout = self.collectionView?.collectionViewLayout as? HFCardCollectionViewLayout {
             self.cardCollectionViewLayout = cardCollectionViewLayout
         }
@@ -52,6 +53,11 @@ class CategoryTableViewController:  UICollectionViewController, HFCardCollection
 //        }
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.setNavigationBarHidden(false, animated:false)
+    }
     // MARK: CollectionView
     
     func cardCollectionViewLayout(_ collectionViewLayout: HFCardCollectionViewLayout, canUnrevealCardAtIndex index: Int) -> Bool {

@@ -14,6 +14,7 @@ PODS:
   - TransitionAnimation (4.0.0):
     - TransitionTreasury (~> 4.0)
   - TransitionTreasury (4.0.0)
+  - UXMPDFKit (0.6.1)
   - XCDYouTubeKit (2.5.3)
 
 DEPENDENCIES:
@@ -26,6 +27,7 @@ DEPENDENCIES:
   - SnapKit (~> 3.1.2)
   - TransitionAnimation (~> 4.0.0)
   - TransitionTreasury (~> 4.0.0)
+  - UXMPDFKit
   - XCDYouTubeKit (~> 2.5)
 
 SPEC CHECKSUMS:
@@ -38,8 +40,9 @@ SPEC CHECKSUMS:
   SnapKit: 12b24f569cb7c143acc9c22b9d91b23e7b1c84a2
   TransitionAnimation: c397b9ca41ab593b35b1e8f8673df17bae0db20a
   TransitionTreasury: dcf3fe6e5c740525d9e7d4544af45e6fbfd71c88
+  UXMPDFKit: af4d7c4cd8dd0e4f717894c179f38f2d18d0a51d
   XCDYouTubeKit: 90690f9e3523735dc93b8024269d991b0cfffe78
 
-PODFILE CHECKSUM: 8eb0cc2115935ecc56493fd7165463af0a4a9cc0
+PODFILE CHECKSUM: 873f072be47294e19fd7907b2063122fa38f0ff1
 
-COCOAPODS: 1.1.0.rc.2
+COCOAPODS: 1.1.1

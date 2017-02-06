@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="b0v-Jt-tg3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="b0v-Jt-tg3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -64,11 +63,11 @@
             </objects>
             <point key="canvasLocation" x="709.60000000000002" y="-546.47676161919048"/>
         </scene>
-        <!--Example-->
+        <!--Category Table View Controller-->
         <scene sceneID="MCp-Y0-aTS">
             <objects>
                 <collectionViewController storyboardIdentifier="CategoryTableViewController" id="f6A-J6-n6M" customClass="CategoryTableViewController" customModule="NEFEnduro" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" prefetchingEnabled="NO" id="PSw-mA-jwn">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" prefetchingEnabled="NO" id="PSw-mA-jwn">
                         <rect key="frame" x="0.0" y="0.0" width="384" height="512"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -156,25 +155,6 @@
                             <outlet property="delegate" destination="f6A-J6-n6M" id="pwQ-JT-dgn"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Example" id="RsI-Da-PyM">
-                        <rightBarButtonItems>
-                            <barButtonItem systemItem="add" id="Gwh-VO-A8d">
-                                <connections>
-                                    <action selector="addCardAction" destination="f6A-J6-n6M" id="H3k-W9-ESK"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem systemItem="trash" id="GCH-yH-tmB">
-                                <connections>
-                                    <action selector="deleteCardAtIndex0orSelected" destination="f6A-J6-n6M" id="P51-ZD-MyQ"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem systemItem="stop" id="ZzO-xd-whb">
-                                <connections>
-                                    <action selector="collapseAllCardsAction" destination="6zk-4O-Y0u" id="4Mj-qm-j7y"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
-                    </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="384" height="512"/>
                     <connections>
@@ -219,6 +199,45 @@ Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed 
                 </view>
             </objects>
             <point key="canvasLocation" x="2169.5999999999999" y="-616.1919040479761"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="DKw-s5-Lg4">
+            <objects>
+                <viewController storyboardIdentifier="PDFViewController" id="w0A-GJ-nRV" customClass="PDFViewController" customModule="NEFEnduro" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="S2M-fN-Ufi"/>
+                        <viewControllerLayoutGuide type="bottom" id="0y5-mL-pZB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MoL-R8-SUv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CJ9-db-bhO" customClass="PDFSinglePageViewer" customModule="UXMPDFKit">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="HcZ-1T-gIW">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="CJ9-db-bhO" firstAttribute="top" secondItem="MoL-R8-SUv" secondAttribute="top" id="5ec-Nf-rI3"/>
+                            <constraint firstItem="0y5-mL-pZB" firstAttribute="top" secondItem="CJ9-db-bhO" secondAttribute="bottom" id="BNH-sA-cK4"/>
+                            <constraint firstAttribute="trailing" secondItem="CJ9-db-bhO" secondAttribute="trailing" id="FDg-yb-3TW"/>
+                            <constraint firstItem="CJ9-db-bhO" firstAttribute="leading" secondItem="MoL-R8-SUv" secondAttribute="leading" id="rRY-n6-e6t"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="CJ9-db-bhO" id="l1T-p8-vGl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BNP-Vf-sFF" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2170" y="-21"/>
         </scene>
     </scenes>
 </document>
