@@ -89,7 +89,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCollectionViewCell", for: indexPath) as! CustomCollectionViewCell 
+        let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCollectionViewCell", for: indexPath) as! CustomCollectionViewCell
         
         cell.topLabel.text = titleDict[indexPath.row]
         if (indexPath.row == 3) {
@@ -193,7 +193,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
                 vc.type = filterDict[indexPath.row]
                 layoutOptions.numberOfCards  = 5
                 vc.layoutOptions = layoutOptions
-
+                
+                navigationController?.isNavigationBarHidden = false
                 let updateTransition: TRPushTransitionMethod = .omni(keyView: cell)
                 navigationController?.tr_pushViewController(vc, method:updateTransition, statusBarStyle: .lightContent, completion: {
                     print("Pushed")
@@ -205,7 +206,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
                 navigationController?.tr_pushViewController(vc, method:updateTransition, statusBarStyle: .lightContent, completion: {
                     print("Pushed")
                 })
-
             }
         }
     }
@@ -277,7 +277,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             return value
         }
     }
-
 }
 
 struct CardLayoutSetupOptions {

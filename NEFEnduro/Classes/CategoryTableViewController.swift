@@ -21,7 +21,6 @@ class CategoryTableViewController:  UICollectionViewController, HFCardCollection
 
     /// Transiton delegate
     var tr_pushTransition: TRNavgationTransitionDelegate?
-    var colorArray = [UIColor]()
     var shouldSetupBackgroundView = true
     var type:String? = nil
     var finalResult : [[String:AnyObject]] = []
@@ -30,7 +29,6 @@ class CategoryTableViewController:  UICollectionViewController, HFCardCollection
     override func viewDidLoad() {
         super.viewDidLoad()
         readFromJson()
-
         layoutOptions.cardHeadHeight = 300
         
         self.colorArray.insert(UIColor.red, at: 0)
@@ -40,17 +38,6 @@ class CategoryTableViewController:  UICollectionViewController, HFCardCollection
         if let cardCollectionViewLayout = self.collectionView?.collectionViewLayout as? HFCardCollectionViewLayout {
             self.cardCollectionViewLayout = cardCollectionViewLayout
         }
-        
-//        view.backgroundColor = UIColor.red
-//        
-//        let button = UIButton()
-//        view.addSubview(button)
-//        button.setTitle("Back", for: .normal)
-//        button.addTarget(self, action: #selector(self.popButtonTapped(button:)), for: .touchUpInside)
-//        button.snp.makeConstraints { (make) in
-//            make.center.equalTo(view)
-//            make.height.width.equalTo(40)
-//        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -96,7 +83,8 @@ class CategoryTableViewController:  UICollectionViewController, HFCardCollection
         cell.labelPrize?.text = prize?.replacingOccurrences(of: "|", with: "\n")
         cell.labelSummary?.text = String("Summary: ")?.appending(finalResult[indexPath.row]["summary"] as! String)
         cell.labelType?.text = String("Type: ")?.appending(finalResult[indexPath.row]["type"] as! String)
-        cell.backgroundColor = self.colorArray[indexPath.item  % 3]
+        cell.buttonFlip.addTarget(self, action: #selector(CategoryTableViewController.toMapView), for: .touchUpInside)
+        
         return cell
     }
     
@@ -108,10 +96,6 @@ class CategoryTableViewController:  UICollectionViewController, HFCardCollection
         let tempResult = self.finalResult[sourceIndexPath.item]
         self.finalResult.remove(at: sourceIndexPath.item)
         self.finalResult.insert(tempResult, at: destinationIndexPath.item)
-        
-        let tempColor = self.colorArray[sourceIndexPath.item]
-        self.colorArray.remove(at: sourceIndexPath.item)
-        self.colorArray.insert(tempColor, at: destinationIndexPath.item)
     }
     
     func popButtonTapped(button : UIButton) -> Void {
@@ -139,6 +123,11 @@ class CategoryTableViewController:  UICollectionViewController, HFCardCollection
     
     func getFilePath(fileName: String) -> String? {
         return Bundle.main.path(forResource: fileName, ofType: "json")
+    }
+    
+    func toMapView() {
+        let mapViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
+        navigationController?.pushViewController(mapViewController, animated: true)
     }
     
 }

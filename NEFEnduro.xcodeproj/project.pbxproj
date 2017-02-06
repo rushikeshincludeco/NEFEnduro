@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6202B2261E48745E00FB1C45 /* TypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6202B2251E48745E00FB1C45 /* TypeViewController.swift */; };
 		62103BBE1E3B12B7003C0196 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62103BBC1E3B12B7003C0196 /* MapViewController.swift */; };
 		62103BBF1E3B12B7003C0196 /* path.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 62103BBD1E3B12B7003C0196 /* path.gpx */; };
 		621E14A41E43BC0600E47BFC /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = 621E14A31E43BC0600E47BFC /* categories.json */; };
@@ -48,6 +49,7 @@
 /* Begin PBXFileReference section */
 		15A00E083BBA464741682EE1 /* Pods-NEFEnduro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NEFEnduro.release.xcconfig"; path = "Pods/Target Support Files/Pods-NEFEnduro/Pods-NEFEnduro.release.xcconfig"; sourceTree = "<group>"; };
 		1AB9D59922B81ADA79650E69 /* Pods_NEFEnduro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NEFEnduro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6202B2251E48745E00FB1C45 /* TypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeViewController.swift; sourceTree = "<group>"; };
 		62103BBC1E3B12B7003C0196 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		62103BBD1E3B12B7003C0196 /* path.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = path.gpx; sourceTree = "<group>"; };
 		621E14A31E43BC0600E47BFC /* categories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = categories.json; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 				A26BE2171E32373000501B0C /* Application */,
 				A26BE2141E32372A00501B0C /* ViewController.swift */,
 				A2038A081E3291530007C9D2 /* CategoryTableViewController.swift */,
+				6202B2251E48745E00FB1C45 /* TypeViewController.swift */,
 				62103BBC1E3B12B7003C0196 /* MapViewController.swift */,
 				A20C45991E48BC350091022F /* PDFViewController.swift */,
 				621E14A31E43BC0600E47BFC /* categories.json */,
@@ -379,6 +382,7 @@
 				A26BE21E1E32457600501B0C /* CustomCollectionViewCell.swift in Sources */,
 				A26BE2161E32372A00501B0C /* ViewController.swift in Sources */,
 				A26BE2151E32372A00501B0C /* AppDelegate.swift in Sources */,
+				6202B2261E48745E00FB1C45 /* TypeViewController.swift in Sources */,
 				A2B894021E3B9EF400E48C60 /* ExampleCollectionViewCell.swift in Sources */,
 				A2038A091E3291530007C9D2 /* CategoryTableViewController.swift in Sources */,
 				A20C459A1E48BC350091022F /* PDFViewController.swift in Sources */,
