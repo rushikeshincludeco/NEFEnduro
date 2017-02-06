@@ -31,6 +31,18 @@ class ExampleCollectionViewCell: HFCardCollectionViewCell {
         self.buttonFlip?.isHidden = true
         self.tableView?.scrollsToTop = false
         
+        let imageView = UIImageView()
+        contentView.insertSubview(imageView, at: 0)
+        imageView.contentMode = .scaleAspectFill
+        imageView.frame = contentView.frame
+        imageView.clipsToBounds = true
+        var image = UIImage()
+        image = UIImage(named: "bgImage")!
+        imageView.image = image
+        imageView.snp.makeConstraints{ (make) in
+            make.left.right.top.bottom.equalTo(contentView)
+        }
+        
         labelText.font = UIFont(name: "ALoveofThunder", size: 18)
         self.labelText.lineBreakMode = NSLineBreakMode.byWordWrapping
         self.labelText.numberOfLines = 0
@@ -99,12 +111,12 @@ class ExampleCollectionViewCell: HFCardCollectionViewCell {
     }
     
     @IBAction func buttonFlipAction() {
-        if let backView = self.backView {
-            // Same Corner radius like the contentview of the HFCardCollectionViewCell
-            backView.layer.cornerRadius = self.cornerRadius
-            backView.layer.masksToBounds = true
-            
-            self.cardCollectionViewLayout?.flipRevealedCard(toView: backView)
-        }
+//        if let backView = self.backView {
+//            // Same Corner radius like the contentview of the HFCardCollectionViewCell
+//            backView.layer.cornerRadius = self.cornerRadius
+//            backView.layer.masksToBounds = true
+//            
+//            self.cardCollectionViewLayout?.flipRevealedCard(toView: backView)
+//        }
     }
 }
