@@ -188,17 +188,11 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             
             if indexPath.row != 3 {
                 
-                let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CategoryTableViewController") as! CategoryTableViewController
-                var layoutOptions = CardLayoutSetupOptions()
+                let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TypeViewController") as! TypeViewController
                 vc.type = filterDict[indexPath.row]
-                layoutOptions.numberOfCards  = 5
-                vc.layoutOptions = layoutOptions
-                
                 navigationController?.isNavigationBarHidden = false
-                let updateTransition: TRPushTransitionMethod = .omni(keyView: cell)
-                navigationController?.tr_pushViewController(vc, method:updateTransition, statusBarStyle: .lightContent, completion: {
-                    print("Pushed")
-                })
+                navigationController?.pushViewController(vc, animated: true)
+
             } else {
                 let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PDFViewController") as! PDFViewController
                 

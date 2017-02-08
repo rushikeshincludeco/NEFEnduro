@@ -1,30 +1,32 @@
 //
-//  TypeViewController.swift
+//  FinalDisplayViewController.swift
 //  NEFEnduro
 //
-//  Created by Include tech. on 06/02/17.
+//  Created by Include tech. on 08/02/17.
 //  Copyright © 2017 Include tech. All rights reserved.
 //
 
 import UIKit
 
-class TypeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FinalDisplayViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
-    var type:String? = nil
-    var finalResult : [[String:AnyObject]] = []
-
+    var finalResult : [String:AnyObject] = [:]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        readFromJson()
-        tableView.dataSource = self
         tableView.delegate = self
+        tableView.dataSource = self
         tableView.alwaysBounceVertical = false
+        self.tableView.estimatedRowHeight = 100.0
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.tableFooterView = UIView()
+
+        
+        view.addSubview(tableView)
         tableView.snp.makeConstraints { (make) in
             make.left.right.top.bottom.equalTo(view)
         }
-        tableView.tableFooterView = UIView()
-        navigationController?.navigationBar.topItem?.title = self.type
 
         // Do any additional setup after loading the view.
     }
@@ -35,15 +37,16 @@ class TypeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return finalResult[0]["event"]!.count
+        return finalResult["event"]!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: "Cell")
-        var str = ""
-
-        cell.textLabel?.text = finalResult[indexPath.row]["kmdesc"] as? String
-
+        
+        let dict = finalResult["event"]![indexPath.row] as? [String : AnyObject]
+        
+        cell.textLabel?.text = dict?["name"] as? String
+        
         cell.textLabel?.numberOfLines = 0;
         cell.textLabel?.lineBreakMode = .byWordWrapping;
         return cell
@@ -52,16 +55,17 @@ class TypeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath as IndexPath, animated: true)
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FinalDisplayViewController") as! FinalDisplayViewController
-        vc.finalResult = finalResult[indexPath.row]
-
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
+        let retval = finalResult["event"]![indexPath.row] as? [String : AnyObject]
+        vc.finalResult = retval!
+        
         navigationController?.isNavigationBarHidden = false
         navigationController?.pushViewController(vc, animated: true)
-
-
+        
+        
     }
 
     /*
@@ -74,22 +78,4 @@ class TypeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     */
 
-    func readFromJson() {
-        
-        let fileName = "categories"
-        let filePath = getFilePath(fileName: fileName)
-        let data =  NSData(contentsOf: NSURL(fileURLWithPath: filePath!) as URL)
-        do {
-            let json = try JSONSerialization.jsonObject(with: data! as Data, options: .allowFragments) as? [String:AnyObject]
-            finalResult = json![type!] as! [[String : AnyObject]]
-
-        } catch {
-            print ("error")
-        }
-    }
-    
-    func getFilePath(fileName: String) -> String? {
-        return Bundle.main.path(forResource: fileName, ofType: "json")
-    }
-    
 }
