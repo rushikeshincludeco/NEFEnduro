@@ -1,16 +1,17 @@
 {
- "solo":[ {
+ "solo":[{
  
- "km": "70",
- "kmdesc": "[ APPROXIMATELY 70 KILOMETERS IN DISTANCE ]",
- "event": [{
-           "name": "SOLO 70 – MEN",
-           "fees": "Rs.3500",
-           "desc": "Individual MALE Participant must be minimum 18 years of age.",
-           "summary": "CATEGORY IS OPEN FOR EVERYONE",
-           "prize": ["Rs.10,000", "Rs.7500", "Rs.5000"]
-           }, {
-           "name": "SOLO 70 – WOMEN",
+         "km": "70",
+         "kmdesc": "[ APPROXIMATELY 70 KILOMETERS IN DISTANCE ]",
+         "event": [{
+                        "name": "SOLO 70 – MEN",
+                        "fees": "Rs.3500",
+                   "desc": "Individual MALE Participant must be minimum 18 years of age.",
+                   "summary": "CATEGORY IS OPEN FOR EVERYONE",
+                   "prize": ["Rs.10,000", "Rs.7500", "Rs.5000"]
+                   },
+                   {
+                   "name": "SOLO 70 – WOMEN",
            "fees": "Rs.2500",
            "desc": "Individual MALE Participant must be minimum 18 years of age.",
            "summary": "CATEGORY IS OPEN FOR EVERYONE",

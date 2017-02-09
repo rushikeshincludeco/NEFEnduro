@@ -21,6 +21,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     var tr_pushTransition: TRNavgationTransitionDelegate?
     
     let nefImageView = UIImageView()
+    var finalResult : [String : AnyObject] = [:]
 
     //Datasource
     let titleDict = ["Duo","Team","Solo","Rules & Regulations"]
@@ -46,6 +47,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         bgImageView.contentMode = .scaleAspectFill
         
         self.layout = UICollectionViewFlowLayout()
+        
+        readFromJson()
         
         self.collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
         view.addSubview(collectionView)
@@ -185,13 +188,18 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if let cell = collectionView.cellForItem(at: indexPath) as? CustomCollectionViewCell {
-            
+        
             if indexPath.row != 3 {
                 
                 let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TypeViewController") as! TypeViewController
                 vc.type = filterDict[indexPath.row]
-                navigationController?.isNavigationBarHidden = false
-                navigationController?.pushViewController(vc, animated: true)
+                vc.finalResult = finalResult[vc.type!] as! [AnyObject]
+                let updateTransition: TRPushTransitionMethod = .omni(keyView: cell)
+//                navigationController?.pushViewController(vc, animated: true)
+                navigationController?.tr_pushViewController(vc, method:updateTransition, statusBarStyle: .lightContent, completion: {
+                    print("Pushed")
+                })
+
 
             } else {
                 let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PDFViewController") as! PDFViewController
@@ -270,6 +278,26 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         default:
             return value
         }
+    }
+    
+    func readFromJson() {
+        
+        let fileName = "categories"
+        let filePath = getFilePath(fileName: fileName)
+        let data =  NSData(contentsOf: NSURL(fileURLWithPath: filePath!) as URL)
+        do {
+            if let json = try JSONSerialization.jsonObject(with: data! as Data, options: .allowFragments) as? [String : AnyObject] {
+                print(json)
+                finalResult = json
+            }
+            
+        } catch {
+            print ("error")
+        }
+    }
+    
+    func getFilePath(fileName: String) -> String? {
+        return Bundle.main.path(forResource: fileName, ofType: "json")
     }
 }
 

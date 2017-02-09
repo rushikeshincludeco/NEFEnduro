@@ -59,7 +59,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, XMLParserD
     }
     
     func backButtonPressed(){
-         navigationController?.popViewController(animated: true)
+        _ = navigationController?.popViewController(animated: true)
     }
     
     

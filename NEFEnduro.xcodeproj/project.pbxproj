@@ -14,7 +14,6 @@
 		62154F141E4B93A400E6D255 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62154F131E4B93A400E6D255 /* DetailsViewController.swift */; };
 		621E14A41E43BC0600E47BFC /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = 621E14A31E43BC0600E47BFC /* categories.json */; };
 		62307C6B1E46509B004F0AFA /* NECC NEF ENDURO - RuleBook 2017.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 62307C6A1E46509B004F0AFA /* NECC NEF ENDURO - RuleBook 2017.pdf */; };
-		62E024C21E4B7B1500459DC8 /* FinalDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E024C11E4B7B1500459DC8 /* FinalDisplayViewController.swift */; };
 		A20389E01E327CD90007C9D2 /* A Love of Thunder - ReadMe.txt in Resources */ = {isa = PBXBuildFile; fileRef = A20389DD1E327CD90007C9D2 /* A Love of Thunder - ReadMe.txt */; };
 		A20389E11E327CD90007C9D2 /* ALoveofThunder.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A20389DE1E327CD90007C9D2 /* ALoveofThunder.ttf */; };
 		A20389E21E327CD90007C9D2 /* a-love-of-thunder.gif in Resources */ = {isa = PBXBuildFile; fileRef = A20389DF1E327CD90007C9D2 /* a-love-of-thunder.gif */; };
@@ -36,7 +35,6 @@
 		A2038A051E327CE50007C9D2 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A20389F31E327CE50007C9D2 /* Roboto-Thin.ttf */; };
 		A2038A061E327CE50007C9D2 /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A20389F41E327CE50007C9D2 /* Roboto-ThinItalic.ttf */; };
 		A2038A071E327CE50007C9D2 /* Roboto_Specimen_Book.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A20389F51E327CE50007C9D2 /* Roboto_Specimen_Book.pdf */; };
-		A2038A091E3291530007C9D2 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2038A081E3291530007C9D2 /* CategoryTableViewController.swift */; };
 		A20C459A1E48BC350091022F /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20C45991E48BC350091022F /* PDFViewController.swift */; };
 		A26BE2051E32334500501B0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A26BE2031E32334500501B0C /* Main.storyboard */; };
 		A26BE2071E32334500501B0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A26BE2061E32334500501B0C /* Assets.xcassets */; };
@@ -55,7 +53,6 @@
 		62154F131E4B93A400E6D255 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		621E14A31E43BC0600E47BFC /* categories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = categories.json; sourceTree = "<group>"; };
 		62307C6A1E46509B004F0AFA /* NECC NEF ENDURO - RuleBook 2017.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "NECC NEF ENDURO - RuleBook 2017.pdf"; sourceTree = "<group>"; };
-		62E024C11E4B7B1500459DC8 /* FinalDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinalDisplayViewController.swift; sourceTree = "<group>"; };
 		A20389DD1E327CD90007C9D2 /* A Love of Thunder - ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "A Love of Thunder - ReadMe.txt"; sourceTree = "<group>"; };
 		A20389DE1E327CD90007C9D2 /* ALoveofThunder.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ALoveofThunder.ttf; sourceTree = "<group>"; };
 		A20389DF1E327CD90007C9D2 /* a-love-of-thunder.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "a-love-of-thunder.gif"; sourceTree = "<group>"; };
@@ -77,7 +74,6 @@
 		A20389F31E327CE50007C9D2 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		A20389F41E327CE50007C9D2 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
 		A20389F51E327CE50007C9D2 /* Roboto_Specimen_Book.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Roboto_Specimen_Book.pdf; sourceTree = "<group>"; };
-		A2038A081E3291530007C9D2 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
 		A20C45991E48BC350091022F /* PDFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
 		A26BE1FC1E32334500501B0C /* NEFEnduro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NEFEnduro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A26BE2041E32334500501B0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -195,9 +191,7 @@
 				62307C6A1E46509B004F0AFA /* NECC NEF ENDURO - RuleBook 2017.pdf */,
 				A26BE2171E32373000501B0C /* Application */,
 				A26BE2141E32372A00501B0C /* ViewController.swift */,
-				A2038A081E3291530007C9D2 /* CategoryTableViewController.swift */,
 				6202B2251E48745E00FB1C45 /* TypeViewController.swift */,
-				62E024C11E4B7B1500459DC8 /* FinalDisplayViewController.swift */,
 				62103BBC1E3B12B7003C0196 /* MapViewController.swift */,
 				A20C45991E48BC350091022F /* PDFViewController.swift */,
 				62154F131E4B93A400E6D255 /* DetailsViewController.swift */,
@@ -388,8 +382,6 @@
 				A26BE2151E32372A00501B0C /* AppDelegate.swift in Sources */,
 				6202B2261E48745E00FB1C45 /* TypeViewController.swift in Sources */,
 				A2B894021E3B9EF400E48C60 /* ExampleCollectionViewCell.swift in Sources */,
-				62E024C21E4B7B1500459DC8 /* FinalDisplayViewController.swift in Sources */,
-				A2038A091E3291530007C9D2 /* CategoryTableViewController.swift in Sources */,
 				A20C459A1E48BC350091022F /* PDFViewController.swift in Sources */,
 				62103BBE1E3B12B7003C0196 /* MapViewController.swift in Sources */,
 				62154F141E4B93A400E6D255 /* DetailsViewController.swift in Sources */,

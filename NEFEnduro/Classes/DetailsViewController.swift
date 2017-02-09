@@ -7,15 +7,21 @@
 //
 
 import UIKit
+import TransitionTreasury
+import TransitionAnimation
 
-class DetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class DetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NavgationTransitionable {
 
     @IBOutlet weak var tableView: UITableView!
-    var finalResult : [String:AnyObject] = [:]
+    var finalResult : [String : AnyObject] = [:]
+    let labelText = UILabel()
+    let labelDesc = UILabel()
+    let labelSummary = UILabel()
+    var tr_pushTransition: TRNavgationTransitionDelegate?
+
 
     override func viewDidLoad() {
         
-        let dict = finalResult as? [String : AnyObject]
 
         
         super.viewDidLoad()
@@ -40,11 +46,9 @@ class DetailsViewController: UIViewController, UITableViewDelegate, UITableViewD
             make.left.right.top.bottom.equalTo(containerView)
         }
         
-        let labelText = UILabel()
         labelText.font = UIFont(name: "ALoveofThunder", size: 18)
         labelText.lineBreakMode = NSLineBreakMode.byWordWrapping
         labelText.numberOfLines = 0
-        labelText.text = dict?["name"] as? String
         containerView.addSubview(labelText)
         labelText.snp.makeConstraints { (make) in
             make.centerX.equalTo(containerView)
@@ -52,12 +56,10 @@ class DetailsViewController: UIViewController, UITableViewDelegate, UITableViewD
             make.top.equalTo(containerView.snp.top).offset(65)
         }
         
-        let labelDesc = UILabel()
         labelDesc.font = UIFont(name: "Roboto-Black", size: 15)
         labelDesc.lineBreakMode = NSLineBreakMode.byWordWrapping
         labelDesc.numberOfLines = 0
-        let str = dict?["desc"]
-        labelDesc.text = str?.replacingOccurrences(of: ". ", with: ".\n")
+        
         containerView.addSubview(labelDesc)
 
         labelDesc.snp.makeConstraints { (make) in
@@ -66,12 +68,10 @@ class DetailsViewController: UIViewController, UITableViewDelegate, UITableViewD
             make.top.equalTo(labelText.snp.bottom)
         }
         
-        let labelSummary = UILabel()
         
         labelSummary.font = UIFont(name: "Roboto-Black", size: 15)
         labelSummary.lineBreakMode = NSLineBreakMode.byWordWrapping
         labelSummary.numberOfLines = 0
-        labelSummary.text = dict?["summary"] as? String
         containerView.addSubview(labelSummary)
 
         labelSummary.snp.makeConstraints { (make) in
@@ -92,9 +92,25 @@ class DetailsViewController: UIViewController, UITableViewDelegate, UITableViewD
             make.left.right.bottom.equalTo(view)
             make.top.equalTo(containerView.snp.bottom)
         }
+
+        labelText.text = finalResult["name"] as? String
+        let str = finalResult["desc"] as? String
+        labelDesc.text = str?.replacingOccurrences(of: ". ", with: ".\n")
+        labelSummary.text = finalResult["summary"] as? String
         
-//        navigationController?.isNavigationBarHidden = true
-        // Do any additional setup after loading the view.
+        let btn1 = UIButton(type: .custom)
+        btn1.setTitle("Back", for: .normal)
+        btn1.setTitleColor(UIColor.black, for: .normal)
+        btn1.frame = CGRect(x: 0, y: 0, width: 50, height: 30)
+        btn1.addTarget(self, action: #selector(DetailsViewController.backButtonPressed), for: .touchUpInside)
+        let item1 = UIBarButtonItem(customView: btn1)
+        self.navigationItem.setLeftBarButtonItems([item1], animated: true)
+
+    }
+    
+    func backButtonPressed(){
+        
+        _ = navigationController?.tr_popViewController()
     }
 
     override func didReceiveMemoryWarning() {
@@ -113,15 +129,18 @@ class DetailsViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: "Cell")
         
-        let dict = finalResult as? [String : AnyObject]
         if indexPath.section == 0 {
-            cell.textLabel?.text = dict?["fees"] as? String
+            cell.textLabel?.text = finalResult["fees"] as? String
         } else {
-            let prize = dict!["prize"] as! [String]
-            cell.textLabel?.text = prize[indexPath.row] as? String
+            let prize = finalResult["prize"] as! [String]
+            let str = prize[indexPath.row]
+         
+            cell.textLabel?.text =  "\(indexPath.row + 1) : ".appending(str)
         }
         cell.textLabel?.numberOfLines = 0;
         cell.textLabel?.lineBreakMode = .byWordWrapping;
+
+
         return cell
     }
     
@@ -132,7 +151,7 @@ class DetailsViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?{
         
         if (section == 0){
-            return "Fees"
+            return "Registration Fees"
         }
         if (section == 1){
             return "Prize"
