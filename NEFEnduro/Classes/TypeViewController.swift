@@ -40,7 +40,6 @@ class TypeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: "Cell")
-        var str = ""
 
         cell.textLabel?.text = finalResult[indexPath.row]["kmdesc"] as? String
 

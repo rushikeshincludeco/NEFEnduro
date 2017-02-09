@@ -24,7 +24,7 @@ class DetailsViewController: UIViewController, UITableViewDelegate, UITableViewD
         view.addSubview(containerView)
         containerView.snp.makeConstraints{(make) in
             make.left.right.equalTo(view)
-            make.top.equalTo(view).offset(-30)
+            make.top.equalTo(view)
             make.height.equalTo(view).multipliedBy(0.65)
         }
         
@@ -49,7 +49,7 @@ class DetailsViewController: UIViewController, UITableViewDelegate, UITableViewD
         labelText.snp.makeConstraints { (make) in
             make.centerX.equalTo(containerView)
             make.height.equalTo(40)
-            make.top.equalTo(containerView).offset(5)
+            make.top.equalTo(containerView.snp.top).offset(65)
         }
         
         let labelDesc = UILabel()
@@ -61,21 +61,23 @@ class DetailsViewController: UIViewController, UITableViewDelegate, UITableViewD
         containerView.addSubview(labelDesc)
 
         labelDesc.snp.makeConstraints { (make) in
-            make.centerX.equalTo(containerView)
+            make.left.right.equalTo(containerView).offset(5)
             make.height.equalTo(150)
-            make.top.equalTo(labelText.snp.bottom).offset(10)
+            make.top.equalTo(labelText.snp.bottom)
         }
         
         let labelSummary = UILabel()
+        
         labelSummary.font = UIFont(name: "Roboto-Black", size: 15)
         labelSummary.lineBreakMode = NSLineBreakMode.byWordWrapping
         labelSummary.numberOfLines = 0
+        labelSummary.text = dict?["summary"] as? String
         containerView.addSubview(labelSummary)
 
         labelSummary.snp.makeConstraints { (make) in
-            make.centerX.equalTo(labelText)
+            make.left.equalTo(containerView).offset(5)
             make.height.equalTo(50)
-            make.top.equalTo(labelDesc.snp.bottom).offset(10)
+            make.top.equalTo(labelDesc.snp.bottom)
         }
         
         tableView.delegate = self
@@ -91,6 +93,7 @@ class DetailsViewController: UIViewController, UITableViewDelegate, UITableViewD
             make.top.equalTo(containerView.snp.bottom)
         }
         
+//        navigationController?.isNavigationBarHidden = true
         // Do any additional setup after loading the view.
     }
 
