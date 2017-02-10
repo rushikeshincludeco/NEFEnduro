@@ -27,24 +27,6 @@
             </objects>
             <point key="canvasLocation" x="1479" y="-546"/>
         </scene>
-        <!--Map View Controller-->
-        <scene sceneID="pfW-K0-G5G">
-            <objects>
-                <viewController storyboardIdentifier="MapViewController" id="it1-ry-0gC" customClass="MapViewController" customModule="NEFEnduro" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jbp-A5-dg7"/>
-                        <viewControllerLayoutGuide type="bottom" id="eVb-R3-bPG"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="UmK-xm-Kkq">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ENf-kp-zQY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3231" y="-546"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="WDZ-35-mO8">
             <objects>
@@ -62,143 +44,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Q7-eM-Sqg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="709.60000000000002" y="-546.47676161919048"/>
-        </scene>
-        <!--Category Table View Controller-->
-        <scene sceneID="MCp-Y0-aTS">
-            <objects>
-                <collectionViewController storyboardIdentifier="CategoryTableViewController" id="f6A-J6-n6M" customClass="CategoryTableViewController" customModule="NEFEnduro" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" prefetchingEnabled="NO" id="PSw-mA-jwn">
-                        <rect key="frame" x="0.0" y="0.0" width="384" height="512"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <collectionViewLayout key="collectionViewLayout" id="6zk-4O-Y0u" customClass="HFCardCollectionViewLayout" customModule="HFCardCollectionViewLayout"/>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CardCell" id="aa5-0E-jO2" customClass="ExampleCollectionViewCell" customModule="NEFEnduro" customModuleProvider="target">
-                                <rect key="frame" x="32" y="0.0" width="320" height="315"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="315"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Example Card Cell" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kfL-cR-b8m">
-                                            <rect key="frame" x="8" y="8" width="157" height="36"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                            <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.57317341550000001" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </label>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qgd-ZU-ZCE">
-                                            <rect key="frame" x="120" y="36" width="80" height="20"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <state key="normal" title="Map">
-                                                <color key="titleColor" red="0.99272640479999996" green="0.98591910729999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="buttonFlipAction" destination="aa5-0E-jO2" eventType="touchUpInside" id="XTl-XF-zfr"/>
-                                            </connections>
-                                        </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vg3-DR-E7u">
-                                            <rect key="frame" x="237" y="51" width="42" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bfi-CE-sJO">
-                                            <rect key="frame" x="205" y="17" width="42" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HoN-9X-Yeg">
-                                            <rect key="frame" x="263" y="17" width="42" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hFm-Jx-6mF">
-                                            <rect key="frame" x="15" y="38" width="42" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3B9-k8-zzJ">
-                                            <rect key="frame" x="63" y="53" width="42" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </view>
-                                <color key="backgroundColor" red="0.43642729920000001" green="0.43642729920000001" blue="0.43642729920000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <size key="customSize" width="320" height="315"/>
-                                <connections>
-                                    <outlet property="buttonFlip" destination="qgd-ZU-ZCE" id="cgT-LI-9Fo"/>
-                                    <outlet property="labelDesc" destination="Bfi-CE-sJO" id="46p-eb-cNb"/>
-                                    <outlet property="labelFees" destination="vg3-DR-E7u" id="TsJ-M5-8vM"/>
-                                    <outlet property="labelPrize" destination="3B9-k8-zzJ" id="22F-bg-FyE"/>
-                                    <outlet property="labelSummary" destination="hFm-Jx-6mF" id="b1y-M5-i8M"/>
-                                    <outlet property="labelText" destination="kfL-cR-b8m" id="P3b-UC-rw3"/>
-                                    <outlet property="labelType" destination="HoN-9X-Yeg" id="uLf-K4-JCZ"/>
-                                </connections>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="f6A-J6-n6M" id="v3T-1p-DUU"/>
-                            <outlet property="delegate" destination="f6A-J6-n6M" id="pwQ-JT-dgn"/>
-                        </connections>
-                    </collectionView>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="384" height="512"/>
-                    <connections>
-                        <outlet property="collectionView" destination="PSw-mA-jwn" id="FhC-uA-u4V"/>
-                    </connections>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8Hz-V7-ygu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <view contentMode="scaleToFill" id="DVY-Eg-dfq">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="400"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ML9-3d-eQf">
-                            <rect key="frame" x="0.0" y="80" width="320" height="320"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.
-
-Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                        </textView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8cO-lB-ND4">
-                            <rect key="frame" x="123" y="20" width="74" height="30"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="74" id="nrh-wP-teb"/>
-                                <constraint firstAttribute="height" constant="30" id="tmW-DH-IOC"/>
-                            </constraints>
-                            <state key="normal" title="Flip Back"/>
-                            <connections>
-                                <action selector="flipBackRevealedCardAction" destination="6zk-4O-Y0u" eventType="touchUpInside" id="Ki5-iY-K8b"/>
-                            </connections>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="bottom" secondItem="ML9-3d-eQf" secondAttribute="bottom" id="BGF-C2-1yr"/>
-                        <constraint firstItem="ML9-3d-eQf" firstAttribute="top" secondItem="DVY-Eg-dfq" secondAttribute="top" constant="80" id="Ff5-5N-QxY"/>
-                        <constraint firstItem="ML9-3d-eQf" firstAttribute="leading" secondItem="DVY-Eg-dfq" secondAttribute="leading" id="Fys-SZ-ZBF"/>
-                        <constraint firstAttribute="trailing" secondItem="ML9-3d-eQf" secondAttribute="trailing" id="I3g-C8-OXO"/>
-                        <constraint firstItem="8cO-lB-ND4" firstAttribute="top" secondItem="DVY-Eg-dfq" secondAttribute="top" constant="20" id="LTN-fk-G1Q"/>
-                        <constraint firstItem="8cO-lB-ND4" firstAttribute="centerX" secondItem="DVY-Eg-dfq" secondAttribute="centerX" id="vwl-oI-Fyg"/>
-                    </constraints>
-                </view>
-            </objects>
-            <point key="canvasLocation" x="2169.5999999999999" y="-616.1919040479761"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="DKw-s5-Lg4">
@@ -237,7 +82,7 @@ Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BNP-Vf-sFF" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2170" y="-21"/>
+            <point key="canvasLocation" x="2273" y="-546"/>
         </scene>
         <!--Type View Controller-->
         <scene sceneID="oD9-eB-pnw">
@@ -265,35 +110,7 @@ Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XeH-5P-5qL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3213.5999999999999" y="204.64767616191907"/>
-        </scene>
-        <!--Final Display View Controller-->
-        <scene sceneID="iLo-2J-f03">
-            <objects>
-                <viewController storyboardIdentifier="FinalDisplayViewController" id="oTZ-6v-kkW" customClass="FinalDisplayViewController" customModule="NEFEnduro" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="obH-8D-owy"/>
-                        <viewControllerLayoutGuide type="bottom" id="IOk-Hi-IXR"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="w21-gj-pYz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="M5H-KV-dxQ">
-                                <rect key="frame" x="67" y="95" width="240" height="120"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <outlet property="tableView" destination="M5H-KV-dxQ" id="VrE-97-CM1"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="d8r-Qn-ZbM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4141.6000000000004" y="204.64767616191907"/>
+            <point key="canvasLocation" x="3201" y="-546"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="w3c-pp-4Hg">
@@ -321,7 +138,7 @@ Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cCc-xY-ry2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5080" y="190"/>
+            <point key="canvasLocation" x="4241" y="-546"/>
         </scene>
     </scenes>
 </document>

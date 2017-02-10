@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		38E7F517069BA91141BC689D /* Pods_NEFEnduro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00F559A5B9D0057F09EC252C /* Pods_NEFEnduro.framework */; };
 		6202B2261E48745E00FB1C45 /* TypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6202B2251E48745E00FB1C45 /* TypeViewController.swift */; };
-		62103BBE1E3B12B7003C0196 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62103BBC1E3B12B7003C0196 /* MapViewController.swift */; };
 		62103BBF1E3B12B7003C0196 /* path.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 62103BBD1E3B12B7003C0196 /* path.gpx */; };
 		62154F141E4B93A400E6D255 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62154F131E4B93A400E6D255 /* DetailsViewController.swift */; };
 		621E14A41E43BC0600E47BFC /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = 621E14A31E43BC0600E47BFC /* categories.json */; };
@@ -48,7 +47,6 @@
 /* Begin PBXFileReference section */
 		00F559A5B9D0057F09EC252C /* Pods_NEFEnduro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NEFEnduro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6202B2251E48745E00FB1C45 /* TypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeViewController.swift; sourceTree = "<group>"; };
-		62103BBC1E3B12B7003C0196 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		62103BBD1E3B12B7003C0196 /* path.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = path.gpx; sourceTree = "<group>"; };
 		62154F131E4B93A400E6D255 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		621E14A31E43BC0600E47BFC /* categories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = categories.json; sourceTree = "<group>"; };
@@ -192,7 +190,6 @@
 				A26BE2171E32373000501B0C /* Application */,
 				A26BE2141E32372A00501B0C /* ViewController.swift */,
 				6202B2251E48745E00FB1C45 /* TypeViewController.swift */,
-				62103BBC1E3B12B7003C0196 /* MapViewController.swift */,
 				A20C45991E48BC350091022F /* PDFViewController.swift */,
 				62154F131E4B93A400E6D255 /* DetailsViewController.swift */,
 				621E14A31E43BC0600E47BFC /* categories.json */,
@@ -383,7 +380,6 @@
 				6202B2261E48745E00FB1C45 /* TypeViewController.swift in Sources */,
 				A2B894021E3B9EF400E48C60 /* ExampleCollectionViewCell.swift in Sources */,
 				A20C459A1E48BC350091022F /* PDFViewController.swift in Sources */,
-				62103BBE1E3B12B7003C0196 /* MapViewController.swift in Sources */,
 				62154F141E4B93A400E6D255 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

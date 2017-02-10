@@ -79,13 +79,13 @@
                     "fees": "Rs.2500",
                     "prize": ["Rs.15,000", "Rs.10,000", "Rs.7500"],
                     "desc": "The Team will consist of 3 members with at least ONE MALE and ONE FEMALE member. All Team members must be minimum 16 years of age.",
-                    "summary": "CATEGORY IS OPEN ONLY FOR COLLEGE / UNIVERSITY STUDENTS."
+                    "summary": "CATEGORY IS OPEN ONLY FOR COLLEGE / \nUNIVERSITY STUDENTS."
                     }, {
                     "name": "COLLEGIAN 70 – ALL WOMEN",
                     "fees": " Rs.2500",
                     "prize": ["Rs.15,000", "Rs.10,000", "Rs.7500"],
                     "desc": "The Team will consist of 3 FEMALE members. All Team members must be minimum 16 years of age.",
-                    "summary": "CATEGORY IS OPEN ONLY FOR COLLEGE / UNIVERSITY STUDENTS"
+                    "summary": "CATEGORY IS OPEN ONLY FOR COLLEGE / \nUNIVERSITY STUDENTS"
                     }]
           }, {
           "km": "25",
@@ -101,25 +101,25 @@
                     "fees": "Rs.2500",
                     "prize": ["Rs.5000", "Rs.3500", "Rs.2500"],
                     "desc": "The Team will consist of 3 Members. All Team members must be minimum 18 years of age",
-                    "summary": "CATEGORY IS OPEN FOR ALL MEDIA PROFESSIONALS ONLY"
+                    "summary": "CATEGORY IS OPEN FOR ALL MEDIA PROFESSIONALS \nONLY"
                     }, {
                     "name": " JUNIOR 25 – MIX TEAM",
                     "fees": "Rs.1500",
                     "prize": ["Rs.5000", "Rs.3000", "Rs.2000"],
                     "desc": "The Team will consist of 3 members with at least ONE MALE and ONE FEMALE member. All Team members must be minimum 13 and maximum 15 years of age.",
-                    "summary": "CATEGORY IS OPEN ONLY FOR STUDENTS BETWEEN AGES 13 & 15 years"
+                    "summary": "CATEGORY IS OPEN ONLY FOR STUDENTS BETWEEN \nAGES 13 & 15 years"
                     }, {
                     "name": "JUNIOR 25 – ALL BOYS",
                     "fees": "Rs.1800",
                     "prize": ["Rs.5000", "Rs.3000", "Rs.2000"],
                     "desc": "The Team will consist of 3 MALE members. All Team members must be minimum 13 years and maximum 15 years of age.",
-                    "summary": "CATEGORY IS OPEN ONLY FOR STUDENTS BETWEEN AGES 13 & 15 years"
+                    "summary": "CATEGORY IS OPEN ONLY FOR STUDENTS BETWEEN \nAGES 13 & 15 years"
                     }, {
                     "name": "JUNIOR 25 – ALL GIRLS ",
                     "fees": "Rs.1500",
                     "prize": ["Rs.5000", "Rs.3000", "Rs.2000"],
                     "desc": "The Team will consist of 3 FEMALE members. All Team members must be minimum 13 and maximum 15 years of age.",
-                    "summary": "CATEGORY IS OPEN ONLY FOR STUDENTS BETWEEN AGES 13 & 15 years"
+                    "summary": "CATEGORY IS OPEN ONLY FOR STUDENTS BETWEEN \nAGES 13 & 15 years"
                     }]
           }]
  }
