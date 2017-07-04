@@ -1,0 +1,36 @@
+machine:
+  xcode:
+    version: "8.3.1"
+  environment:
+    GYM_CODE_SIGNING_IDENTITY: "iPhone Developer: Rushikesh Pandit (5VH3LRJ3Q8)"
+
+checkout:
+  post:
+    - git submodule sync
+    - git submodule update --init --recursive
+
+dependencies:
+  override:
+    - pod install:
+        timeout: 1800
+  cache_directories:
+    - "~/.cocoapods"
+test:
+  override:
+    - set -o pipefail &&
+      xcodebuild
+        -sdk iphonesimulator
+        -workspace NEFEnduro.xcworkspace
+        -scheme "NEFEnduro"
+        -destination 'platform=iOS Simulator,name=iPhone 6,OS=latest'
+        clean build test |
+      tee $CIRCLE_ARTIFACTS/xcode_raw.log |
+      xcpretty --color --report junit --output $CIRCLE_TEST_REPORTS/xcode/results.xml
+deployment:
+  alpha_distribution:
+    branch: master
+    commands: 
+      - fastlane master
+      - scripts/deploy.sh
+      - sudo pip install 'Circle-Beacon == 2.0.0'
+      - alert-circle mapzen documentation master $CIRCLE_TOKEN
