@@ -11,7 +11,7 @@ checkout:
 
 dependencies:
   override:
-    - pod repo add:
+    - pod install:
         timeout: 1800
   cache_directories:
     - "~/.cocoapods/repos/master"
