@@ -14,7 +14,7 @@ dependencies:
     - pod repo add:
         timeout: 1800
   cache_directories:
-    - "~/.cocoapods"
+    - "~/.cocoapods/repos/master"
 test:
   override:
     - set -o pipefail &&
